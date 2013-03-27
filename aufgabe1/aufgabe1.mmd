@@ -1,0 +1,126 @@
+Title:				Theoretische Informatik 1
+Subtitle:			Praktikumsaufgabe 1: Modellierung der Petrinetz-Kantine
+Author:				Lucas Jenss
+ShortAuthor:		Lucas Jenss
+UseHelvetica:		yes
+Base Header Level:	3
+latex input:		x3-assignment-preamble
+latex input:		x3-assignment-mmd-compat
+latex input:		x3-assignment-begin
+latex footer:		x3-assignment-end
+
+
+<!--
+%\sloppy
+
+\newcommand{\transition}[2]{\textrm{#1} $\rightarrow$ \textrm{#2}}
+
+-->
+
+# Erläuterung der Modellierung
+
+Die erste zu treffende Entscheidung war die Art und Weise der Warteschlangen-Modellierung. Hierfür wurde folgendes System verwendet:
+
+
+<!--
+\vspace{8mm}
+\begin{center}
+\resizebox{0.75\textwidth}{!}{
+
+   \begin{tikzpicture}[x=1pt,y=-1pt]
+
+   \definecolor{BLACK}{RGB}{0,0,0}
+   \definecolor{WHITE}{RGB}{255,255,255}
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (20,20) ellipse[x radius=10, y radius=10];
+   \draw[BLACK]
+    (26,39.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {Eingang};
+   \draw[BLACK]
+    (14,18.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {10};
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (20,140) ellipse[x radius=10, y radius=10];
+   \draw[BLACK]
+    (39,146.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {Warteschlange};
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (20,260) ellipse[x radius=10, y radius=10];
+   \draw[BLACK]
+    (26,279.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {Ausgabe};
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (140,80) ellipse[x radius=10, y radius=10];
+   \draw[BLACK]
+    (160,81.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {WarteschlangeKapazitaet};
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (136,80) ellipse[x radius=3, y radius=3];
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (144,80) ellipse[x radius=3, y radius=3];
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (140,220) ellipse[x radius=10, y radius=10];
+   \draw[BLACK]
+    (97,240.5) node[rotate=0, font=\ttfamily\footnotesize, BLACK, right=-.25em]
+    {AusgabeKapazitaet};
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (140,220) ellipse[x radius=3, y radius=3];
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (10,70) rectangle +(20,20);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (10,190) rectangle +(20,20);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (290,250) rectangle +(20,20);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (20,30) -- (20,70);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (20,70) -- (17,60) -- (23,60) -- (20,70) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (20,90) -- (20,130);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (20,130) -- (17,120) -- (23,120) -- (20,130) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (20,150) -- (20,190);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (20,190) -- (17,180) -- (23,180) -- (20,190) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (20,210) -- (20,250);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (20,250) -- (17,240) -- (23,240) -- (20,250) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (130,80) -- (30,80);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (30,80) -- (40,77) -- (40,83) -- (30,80) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (30,260) -- (290,260);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (290,260) -- (280,263) -- (280,257) -- (290,260) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (130,218) -- (30,202);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (30,202) -- (40,200) -- (39,207) -- (30,202) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (290,258) -- (150,222);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (150,222) -- (160,222) -- (159,228) -- (150,222) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (300,250) -- (300,20) -- (30,20);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (30,20) -- (40,17) -- (40,23) -- (30,20) -- cycle;
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1]
+    (30,198) -- (120,180) -- (138,90);
+   \draw[BLACK, solid, line join=round, line cap=round, line width=1, fill=BLACK]
+    (138,90) -- (139,100) -- (133,99) -- (138,90) -- cycle;
+   \draw[WHITE, solid, line join=round, line cap=round, line width=1, fill=WHITE]
+    (213,150) rectangle +(15,21);
+   \end{tikzpicture}
+
+}
+\end{center}
+-->
+
+Um sicherzustellen dass sich in der Stelle **Warteschlange** immer max. zwei Besucher befinden, wird eine zusätzliche Stelle **WarteschlangeKapazitaet** hinzugefügt, deren Tokenanzahl der Kapazität der Warteschlange entspricht (im Beispiel zwei). Die Transition <!--\transition{Eingang}{Warteschlange}--> wird nun mit einer zusätzlichen Kante <!--\transition{Warteschlange\-Kapazitaet}{Warteschlange}--> versehen, sodass diese nur schalten kann wenn mindestens ein Kapazitätstoken vorhanden ist. Die Transition welche aus der Warteschlange hinausführt wird analog mit einer Kante versehen, welche ein Token in die "WarteschlangeKapazitaet" Stelle hinzufügt. Das selbe Verfahren wird eingesetzt, um sicherzugehen dass sich maximal eine Person zur Zeit in der Ausgabe befindet.
+
+## Dolor Sit Amet
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
