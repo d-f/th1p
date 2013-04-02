@@ -24,6 +24,12 @@ latex footer:		x3-assignment-end
 
 \newcommand{\op}[1]{\operatorname{#1}}
 
+% Vorbereich und Nachbereich
+\newcommand{\vb}[1]{\bullet \, #1}
+\newcommand{\nb}[1]{#1 \, \bullet}
+
+% aktivierte Transition
+\newcommand{\ma}[2]{#1[#2\rangle}
 -->
 
 # Erläuterung der Modellierung
@@ -100,7 +106,97 @@ M_0(x) =
 \]
 -->
 
-
+<!--\newpage-->
 # Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
 
+Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen, beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht, bis auf die Tatsache dass es zwei zusätzliche Token auf der Stelle <!--$EG$--> hat:
 
+<!--
+\[
+M(x) =
+  \begin{cases}
+    3 & ; falls \; x = KK \\
+    2 & ; falls \; x \in \{ WK2, WK1, EG \} \\
+    1 & ; falls \; x \in \{ AK2, AK1, A1 \} \\
+    0 & ; sonst
+  \end{cases}
+\]
+-->
+
+Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t4 \rightarrow t6 \rightarrow t5 \rightarrow tB \rightarrow tb \rightarrow tA \rightarrow tA$--> geschaltet:
+
+<!--
+\[
+\begin{array}{c}
+  \vb{t1} = \{ EG, WK2 \} \\
+  M(WK) = 2 \geq 1 = W(WK, t1) \\
+  M(WK2) = 1 \geq 1 = W(WK2, t1)
+  \\
+  \ma{M}{t1}M' =
+    \begin{cases}
+      3 & ; falls \; x = KK \\
+      2 & ; falls \; x \in \{ WK1 \} \\
+      1 & ; falls \; x \in \{ EG, WS2, WK2, AK2, AK1, A1 \} \\
+      0 & ; sonst
+    \end{cases}
+\end{array}
+\]
+
+\[
+\begin{array}{c}
+  \vb{t3} = \{ WS2 \} \\
+  M'(WS2) = 1 \geq 1 = W(WS2, t3) \\
+  \\
+  \ma{M'}{t3}M'' =
+    \begin{cases}
+      3 & ; falls \; x = KK \\
+      2 & ; falls \; x \in \{ WK1, WK2 \} \\
+      1 & ; falls \; x \in \{ EG, A2, AK1, A1 \} \\
+      0 & ; sonst
+    \end{cases}
+\end{array}
+\]
+
+\[
+\begin{array}{c}
+  \vb{t2} = \{ EG, WK1 \} \\
+  M''(EG) = 1 \geq 1 = W(EG, t2) \\
+  M''(WK1) = 2 \geq 1 = W(WK1, t2) \\
+  \\
+  \ma{M''}{t2}M''' =
+    \begin{cases}
+      3 & ; falls \; x = KK \\
+      2 & ; falls \; x \in \{ WK2 \} \\
+      1 & ; falls \; x \in \{ WK1, WS1, A2, AK1, A1 \} \\
+      0 & ; sonst
+    \end{cases}
+\end{array}
+\]
+-->
+
+usw.
+
+
+
+
+
+
+
+
+
+## Erreichbarkeitsgraph der Schaltfolge
+
+<!-- \fig{width=0.65\textwidth}{erreichbarkeitsgraph1} -->
+
+
+
+
+# Netzkomplement
+
+Da Snoopy keine Kapazitäten unterstützt, wurde das Netz von Anfang an ohne diese modelliert. Das Netzkomplement ist somit nicht zu berechnen, bzw. es ist identisch mit der bereits gezeigen Lösung.
+
+
+
+# Prozessnetz
+
+<!-- \fig{width=0.9\textwidth}{solution-process-net} -->
