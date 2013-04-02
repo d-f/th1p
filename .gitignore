@@ -1,4 +1,8 @@
-
+*.tex
+*.pdf
+*.dpth
+*.eps
+*.auxlock
 
 # Added by gemignore. Snippet 'Global/Linux'
 .*
