@@ -18,7 +18,7 @@
           </graphics>
         </attribute>
         <attribute name="Marking" id="433" net="1">
-          <![CDATA[10]]>
+          <![CDATA[2]]>
           <graphics count="1">
             <graphic x="200.00" y="20.00" id="434" net="1" show="0" grparent="438" state="1"/>
           </graphics>
@@ -973,13 +973,13 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Multiplicity" id="1663" net="1">
           <![CDATA[1]]>
           <graphics count="1">
-            <graphic xoff="20.00" yoff="-0.00" x="219.47" y="309.74" id="1664" net="1" show="1" grparent="1667" state="1"/>
+            <graphic xoff="20.00" x="219.47" y="309.74" id="1664" net="1" show="1" grparent="1667" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Comment" id="1665" net="1">
           <![CDATA[]]>
           <graphics count="1">
-            <graphic xoff="40.00" yoff="-0.00" x="239.47" y="309.74" id="1666" net="1" show="1" grparent="1667" state="1"/>
+            <graphic xoff="40.00" x="239.47" y="309.74" id="1666" net="1" show="1" grparent="1667" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
@@ -995,13 +995,13 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Multiplicity" id="1675" net="1">
           <![CDATA[1]]>
           <graphics count="1">
-            <graphic xoff="20.00" yoff="-0.00" x="341.16" y="289.03" id="1676" net="1" show="1" grparent="1679" state="1"/>
+            <graphic xoff="20.00" x="341.16" y="289.03" id="1676" net="1" show="1" grparent="1679" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Comment" id="1677" net="1">
           <![CDATA[]]>
           <graphics count="1">
-            <graphic xoff="40.00" yoff="-0.00" x="361.16" y="289.03" id="1678" net="1" show="1" grparent="1679" state="1"/>
+            <graphic xoff="40.00" x="361.16" y="289.03" id="1678" net="1" show="1" grparent="1679" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
@@ -1083,13 +1083,13 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Multiplicity" id="1737" net="1">
           <![CDATA[1]]>
           <graphics count="1">
-            <graphic xoff="20.00" yoff="0.00" x="98.84" y="289.03" id="1738" net="1" show="1" grparent="1741" state="1"/>
+            <graphic xoff="20.00" x="98.84" y="289.03" id="1738" net="1" show="1" grparent="1741" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Comment" id="1739" net="1">
           <![CDATA[]]>
           <graphics count="1">
-            <graphic xoff="40.00" yoff="0.00" x="118.84" y="289.03" id="1740" net="1" show="1" grparent="1741" state="1"/>
+            <graphic xoff="40.00" x="118.84" y="289.03" id="1740" net="1" show="1" grparent="1741" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
