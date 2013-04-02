@@ -6,7 +6,7 @@
     <nodeclass count="13" name="Place">
       <node id="428" net="1">
         <attribute name="Name" id="429" net="1">
-          <![CDATA[Eingang]]>
+          <![CDATA[EinGang]]>
           <graphics count="1">
             <graphic xoff="41.00" yoff="-2.00" x="241.00" y="18.00" id="430" net="1" show="1" grparent="438" state="1"/>
           </graphics>
@@ -39,7 +39,7 @@
       </node>
       <node id="439" net="1">
         <attribute name="Name" id="440" net="1">
-          <![CDATA[Warteschlange]]>
+          <![CDATA[WarteSchlange1]]>
           <graphics count="1">
             <graphic xoff="52.00" yoff="7.00" x="312.00" y="167.00" id="441" net="1" show="1" grparent="449" state="1"/>
           </graphics>
@@ -72,9 +72,9 @@
       </node>
       <node id="450" net="1">
         <attribute name="Name" id="451" net="1">
-          <![CDATA[Ausgabe]]>
+          <![CDATA[Ausgabe1]]>
           <graphics count="1">
-            <graphic xoff="43.00" yoff="3.00" x="303.00" y="283.00" id="452" net="1" show="1" grparent="460" state="1"/>
+            <graphic xoff="34.00" yoff="2.00" x="294.00" y="282.00" id="452" net="1" show="1" grparent="460" state="1"/>
           </graphics>
         </attribute>
         <attribute name="ID" id="453" net="1">
@@ -107,7 +107,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="479" net="1">
         <attribute name="Name" id="480" net="1">
-          <![CDATA[WarteschlangeKapazitaet]]>
+          <![CDATA[WarteschlangeKapazitaet1]]>
           <graphics count="1">
             <graphic xoff="77.00" yoff="2.00" x="457.00" y="102.00" id="481" net="1" show="1" grparent="489" state="1"/>
           </graphics>
@@ -140,7 +140,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1390" net="1">
         <attribute name="Name" id="1391" net="1">
-          <![CDATA[Warteschlange2]]>
+          <![CDATA[WarteSchlange2]]>
           <graphics count="1">
             <graphic xoff="-51.00" yoff="9.00" x="89.00" y="169.00" id="1392" net="1" show="1" grparent="1400" state="1"/>
           </graphics>
@@ -173,9 +173,9 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1425" net="1">
         <attribute name="Name" id="1426" net="1">
-          <![CDATA[]]>
+          <![CDATA[WarteschlangeKapazitaet2]]>
           <graphics count="1">
-            <graphic xoff="25.00" yoff="20.00" x="45.00" y="120.00" id="1427" net="1" show="1" grparent="1435" state="1"/>
+            <graphic xoff="38.00" yoff="-17.00" x="58.00" y="83.00" id="1427" net="1" show="1" grparent="1435" state="1"/>
           </graphics>
         </attribute>
         <attribute name="ID" id="1428" net="1">
@@ -208,7 +208,7 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Name" id="1475" net="1">
           <![CDATA[Ausgabe2]]>
           <graphics count="1">
-            <graphic xoff="-40.00" yoff="2.00" x="100.00" y="282.00" id="1476" net="1" show="1" grparent="1484" state="1"/>
+            <graphic xoff="-32.00" yoff="-1.00" x="108.00" y="279.00" id="1476" net="1" show="1" grparent="1484" state="1"/>
           </graphics>
         </attribute>
         <attribute name="ID" id="1477" net="1">
@@ -239,7 +239,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1515" net="1">
         <attribute name="Name" id="1516" net="1">
-          <![CDATA[WarteschlangeKasse]]>
+          <![CDATA[Warteschlange_Kasse]]>
           <graphics count="1">
             <graphic xoff="61.00" yoff="3.00" x="261.00" y="503.00" id="1517" net="1" show="1" grparent="1525" state="1"/>
           </graphics>
@@ -272,7 +272,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1592" net="1">
         <attribute name="Name" id="1593" net="1">
-          <![CDATA[AusgabeKapazitaet]]>
+          <![CDATA[AusgabeKapazitaet1]]>
           <graphics count="1">
             <graphic xoff="67.00" yoff="4.00" x="447.00" y="244.00" id="1594" net="1" show="1" grparent="1602" state="1"/>
           </graphics>
@@ -305,9 +305,9 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1701" net="1">
         <attribute name="Name" id="1702" net="1">
-          <![CDATA[]]>
+          <![CDATA[AusgabeKapazitaet2]]>
           <graphics count="1">
-            <graphic xoff="25.00" yoff="20.00" x="45.00" y="260.00" id="1703" net="1" show="1" grparent="1711" state="1"/>
+            <graphic xoff="27.00" yoff="-17.00" x="47.00" y="223.00" id="1703" net="1" show="1" grparent="1711" state="1"/>
           </graphics>
         </attribute>
         <attribute name="ID" id="1704" net="1">
@@ -371,7 +371,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1972" net="1">
         <attribute name="Name" id="1973" net="1">
-          <![CDATA[Speisesaal]]>
+          <![CDATA[SpeiseSaal]]>
           <graphics count="1">
             <graphic xoff="-43.00" yoff="5.00" x="157.00" y="625.00" id="1974" net="1" show="1" grparent="1982" state="1"/>
           </graphics>
@@ -404,7 +404,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1983" net="1">
         <attribute name="Name" id="1984" net="1">
-          <![CDATA[Ausgang]]>
+          <![CDATA[AusGang]]>
           <graphics count="1">
             <graphic xoff="25.00" yoff="20.00" x="365.00" y="640.00" id="1985" net="1" show="1" grparent="1993" state="1"/>
           </graphics>
@@ -601,7 +601,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1951" net="1">
         <attribute name="Name" id="1952" net="1">
-          <![CDATA[Bezahlt]]>
+          <![CDATA[tBezahlt]]>
           <graphics count="1">
             <graphic xoff="37.00" yoff="4.00" x="237.00" y="564.00" id="1953" net="1" show="1" grparent="1959" state="1"/>
           </graphics>
@@ -628,7 +628,7 @@ an dieser Ausgabe befindet.]]>
       </node>
       <node id="1994" net="1">
         <attribute name="Name" id="1995" net="1">
-          <![CDATA[VerlaesstKantine]]>
+          <![CDATA[tAusgang]]>
           <graphics count="1">
             <graphic xoff="1.00" yoff="26.00" x="261.00" y="646.00" id="1996" net="1" show="1" grparent="2002" state="1"/>
           </graphics>
@@ -951,7 +951,7 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Multiplicity" id="1646" net="1">
           <![CDATA[2]]>
           <graphics count="1">
-            <graphic xoff="20.00" x="280.00" y="310.00" id="1647" net="1" show="1" grparent="1650" state="1"/>
+            <graphic xoff="10.00" yoff="-1.00" x="270.00" y="309.00" id="1647" net="1" show="1" grparent="1650" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Comment" id="1648" net="1">
@@ -1017,7 +1017,7 @@ an dieser Ausgabe befindet.]]>
         <attribute name="Multiplicity" id="1681" net="1">
           <![CDATA[2]]>
           <graphics count="1">
-            <graphic xoff="20.00" x="160.00" y="310.00" id="1682" net="1" show="1" grparent="1685" state="1"/>
+            <graphic xoff="9.00" yoff="-1.00" x="149.00" y="309.00" id="1682" net="1" show="1" grparent="1685" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Comment" id="1683" net="1">
