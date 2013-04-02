@@ -2,7 +2,7 @@
 
 if [[ "$1" == "full" ]]; then
 
-    shift    
+    shift
 
     cd nets/
     for file in $(find . -name "*.tex"); do
@@ -12,7 +12,6 @@ if [[ "$1" == "full" ]]; then
 	echo "$figure_name"
 	pdflatex -shell-escape $file
 	cp $figure_name "../figures/${name}.pdf"
-	git clean -xf
     done
 
     cd ..
@@ -22,3 +21,4 @@ fi
 target=$1
 target_name=$(basename $target .mmd)
 mmd2tex $1 && omgtex.rb -o "${target_name}.tex"
+git clean -Xf
