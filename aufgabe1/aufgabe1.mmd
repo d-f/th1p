@@ -32,7 +32,9 @@ latex footer:		x3-assignment-end
 \newcommand{\ma}[2]{#1[#2\rangle}
 -->
 
-# Erläuterung der Modellierung
+# Aufgabenteil 1
+
+## Erläuterung der Modellierung
 
 Die erste zu treffende Entscheidung war die Art und Weise der Warteschlangen-Modellierung. Hierfür wurde folgendes System verwendet:
 
@@ -45,7 +47,7 @@ In der Gesamtlösung verwenden wir diese Technik ebenfalls um die Warteschlange 
 <!-- \fig{width=\textwidth}{solution1} -->
 
 
-# Formale Angabe des Netzes
+## Formale Angabe des Netzes
 
 Ein S/T-Netz wird durch ein 4-Tupel <!--$N = (P,T,W,M_0)$--> definiert. Die einzelnen Bestandteile werden im folgenden aufgeführt:
 
@@ -107,7 +109,7 @@ M_0(x) =
 -->
 
 <!--\newpage-->
-# Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
+## Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
 
 Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen, beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht, bis auf die Tatsache dass es zwei zusätzliche Token auf der Stelle <!--$EG$--> hat:
 
@@ -191,12 +193,29 @@ usw.
 
 
 
-# Netzkomplement
+## Netzkomplement
 
 Da Snoopy keine Kapazitäten unterstützt, wurde das Netz von Anfang an ohne diese modelliert. Das Netzkomplement ist somit nicht zu berechnen, bzw. es ist identisch mit der bereits gezeigen Lösung.
 
 
 
-# Prozessnetz
+## Prozessnetz
 
 <!-- \fig{width=0.9\textwidth}{solution-process-net} -->
+
+
+
+## Geschlossenes System mit fünf Kunden
+
+Das geschlossene Netz für fünf Kunden wurde wie folgt modelliert:
+
+<!-- \fig{width=0.9\textwidth}{solution1-closed} -->
+
+Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Die kombinatorische Explosion (nur fünf Personen, 1500 Kanten) ist das Resultet der Tatsache, dass, ausgehend von jedem Knoten, fast alle Transitionen schalten können, da das Netz viele Transitionen, aber nur wenige Limitierungen für das Schaltverhalten dieser hat. Wenn man den Graph von Charlie mit dem "TreeLayout" rendern lässt, sieht man, dass er bei dem Knoten "Alle Personen befinden sich am Eingang" anfängt, und dann immer breiter wird. Die Breite lässt sich dadurch erklären, dass die Anzahl der Möglichkeiten welche Transition als nächstes schaltet wächst, je mehr Personen/Token sich innerhalb des Netztes befinden. Nach dem der Graph seine maximale Breite erreicht hat, fängt er wieder an "zusammenzuschrumpfen", bis er im Knoten "Alle Personen befinden sich im Speisesaal" wieder nur eine Breite von einem Knoten hat. Wenn sich also nun alle Personen im Speisesaal versammelt haben, haben diese nur noch die Möglichkeit wieder zum Eingang zurückzukehren und wieder ein Gericht zu wählen. Da an dieser Stelle aber bereits alle möglichen Durchläufe der fünf Personen durch das Netz im Graph vorhanden sind, werden keine neuen Knoten erzeugt, sondern lediglich Kanten zu den bereits bestehenden. Hier zur Referenz noch einmal die Form des Graphen (bei dem Leider die oberen und unteren Endknoten abgeschnitten sind):
+
+<!-- \fig{width=0.5\textwidth}{charlie-graph} -->
+
+
+
+# Aufgabenteil 2
+
