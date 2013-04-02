@@ -66,7 +66,15 @@ Ein S/T-Netz wird durch ein 4-Tupel <!--$N = (P,T,W,M_0)$--> definiert. Die einz
 \[
 \begin{array}{ll}
   W_1 = \{&\\
-    &(\op{EG}, t1), (t1, \op{WS2}), (\op{EG}, t2), (t2, \op{WS1}) \\
+
+    &(\op{EG}, \op{t2}), (\op{t2}, \op{WS1}), (\op{WS1}, \op{t4}), (\op{t4}, \op{A1}), \\
+    &(\op{WK1}, \op{t2}), (\op{t4}, \op{WK1}), (\op{t1}, \op{WS2}), (\op{WS2}, \op{t3}), \\
+    &(\op{EG}, \op{t1}), (\op{WK2}, \op{t1}), (\op{t3}, \op{WK2}), (\op{t3}, \op{A2}), \\
+    &(\op{AK1}, \op{t4}), (\op{A1}, \op{t6}), (\op{t6}, \op{A2}), (\op{t6}, \op{AK1}), \\
+    &(\op{A2}, \op{t5}), (\op{t5}, \op{A1}), (\op{AK2}, \op{t3}), (\op{t5}, \op{AK2}), \\
+    &(\op{KK}, \op{t5}), (\op{KK}, \op{t6}), (\op{t5}, \op{W_K}), (\op{t6}, \op{W\_K}), \\
+    &(\op{W\_K}, \op{tB}), (\op{tB}, \op{KK}), (\op{tB}, \op{SS}), (\op{SS}, \op{tA}), \\
+    &(\op{tA}, \op{AG}) \\
 
   \}
 \end{array}
@@ -75,9 +83,24 @@ Ein S/T-Netz wird durch ein 4-Tupel <!--$N = (P,T,W,M_0)$--> definiert. Die einz
 \[
 W(x,y) =
   \begin{cases}
-    2 & ; falls (x,y) \in \{ (Ausgabe2, t5), (Ausgabe, t6) \} \\
-    1 & ; falls (x,y) \in W_1 \\
+    2 & ; falls \; (x,y) \in \{ (Ausgabe2, t5), (Ausgabe, t6) \} \\
+    1 & ; falls \; (x,y) \in W_1 \\
+    0 & ; sonst
+  \end{cases}
+\]
+
+\[
+M_0(x) =
+  \begin{cases}
+    3 & ; falls \; x = KK \\
+    2 & ; falls \; x \in \{ WK2, WK1 \} \\
+    1 & ; falls \; x \in \{ AK2, AK1, A1 \} \\
     0 & ; sonst
   \end{cases}
 \]
 -->
+
+
+# Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
+
+
