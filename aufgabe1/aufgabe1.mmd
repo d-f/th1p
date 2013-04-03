@@ -134,7 +134,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M(WK) = 2 \geq 1 = W(WK, t1) \\
   M(WK2) = 1 \geq 1 = W(WK2, t1)
   \\
-  \ma{M}{t1}M' =
+  \ma{M}{t1}M' \wedge M' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK1 \} \\
@@ -146,14 +146,15 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
 
 \[
 \begin{array}{c}
-  \vb{t3} = \{ WS2 \} \\
+  \vb{t3} = \{ WS2, AK2 \} \\
   M'(WS2) = 1 \geq 1 = W(WS2, t3) \\
+  M'(AK2) = 1 \geq 1 = W(AK2, t3) \\
   \\
-  \ma{M'}{t3}M'' =
+  \ma{M'}{t3}M'' \wedge M'' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK1, WK2 \} \\
-      1 & ; falls \; x \in \{ EG, A2, AK1, A1 \} \\
+      1 & ; falls \; x \in \{ EG, A2, A1 \} \\
       0 & ; sonst
     \end{cases}
 \end{array}
@@ -165,11 +166,44 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M''(EG) = 1 \geq 1 = W(EG, t2) \\
   M''(WK1) = 2 \geq 1 = W(WK1, t2) \\
   \\
-  \ma{M''}{t2}M''' =
+  \ma{M''}{t2}M''' \wedge M''' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK2 \} \\
-      1 & ; falls \; x \in \{ WK1, WS1, A2, AK1, A1 \} \\
+      1 & ; falls \; x \in \{ WK1, WS1, A2, A1 \} \\
+      0 & ; sonst
+    \end{cases}
+\end{array}
+\]
+
+
+\[
+\begin{array}{c}
+  \vb{t4} = \{ WS1, AK1 \} \\
+  M'''(WS1) = 1 \geq 1 = W(WS1, t4) \\
+  M'''(AK1) = 1 \geq 1 = W(AK1, t4) \\
+  \\
+  \ma{M'''}{t4}M'''' \wedge M'''' =
+    \begin{cases}
+      3 & ; falls \; x = KK \\
+      2 & ; falls \; x \in \{ WK1, WK2, A1 \} \\
+      1 & ; falls \; x \in \{ A2 \} \\
+      0 & ; sonst
+    \end{cases}
+\end{array}
+\]
+
+
+\[
+\begin{array}{c}
+  \vb{t6} = \{ A1, KK \} \\
+  M''''(A1) = 2 \geq 2 = W(A1, t6) \\
+  M''''(KK) = 3 \geq 1 = W(KK, t6) \\
+  \\
+  \ma{M''''}{t6}M''''' \wedge M''''' =
+    \begin{cases}
+      2 & ; falls \; x \in \{ KK, WK1, WK2, A2 \} \\
+      1 & ; falls \; x \in \{ AK1, W\_K \} \\
       0 & ; sonst
     \end{cases}
 \end{array}
@@ -224,3 +258,46 @@ Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Di
 Das Netz der umgebauten Kantine wurde wie folgt modelliert:
 
 <!-- \fig{width=0.80\textwidth}{solution2} -->
+
+## Konflikte
+
+Ein Vorwärtskonflikt entsteht am Eingang, wo der "Türsteher" dafür sorgt dass maximal 16 Personen eintreten können.
+
+<!--
+\[
+  \vb{t17} \cap \vb{t18} \cap \vb{t19} = \{ \op{Tuersteher} \} \neq \emptyset
+\]
+-->
+
+
+Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorgt das immer nur an maximal vier von sechs Gerichten (t4-t9) Essen ausgegeben werden kann:
+<!--
+
+\[
+  \begin{array}{c}
+    \vb{t4} = \{ WS1, BD \} \\
+    \vb{t5} = \{ WS1, BD \} \\
+    \vb{t6} = \{ WS2, BD \} \\
+    \vb{t7} = \{ WS2, BD \} \\
+    \vb{t8} = \{ WS3, BD \} \\
+    \vb{t9} = \{ WS3, BD \} \\
+    \\
+    \vb{t4} \cap \vb{t5} \cap \vb{t6} \cap \vb{t7} \cap \vb{t8} \cap \vb{t9} = \{ BD \} \neq \emptyset
+  \end{array}
+\]
+-->
+
+
+
+# Definition: Netzmorphismus
+
+
+
+**Alternative Definition**: Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerrißt, d.h. wenn:
+
+<!--\[
+  (x, y) \in F_1 \Rightarrow f(x) = f(y) \vee (f(x), f(y)) \in F_2
+\]-->
+
+
+
