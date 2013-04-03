@@ -20,7 +20,7 @@
         <attribute name="Marking" id="433" net="1">
           <![CDATA[2]]>
           <graphics count="1">
-            <graphic x="200.00" y="20.00" id="434" net="1" show="0" grparent="438" state="1"/>
+            <graphic x="200.00" y="20.00" id="434" net="1" show="1" grparent="438" state="1"/>
           </graphics>
         </attribute>
         <attribute name="Logic" id="435" net="1">

@@ -101,7 +101,7 @@ W(x,y) =
 M_0(x) =
   \begin{cases}
     3 & ; falls \; x = KK \\
-    2 & ; falls \; x \in \{ WK2, WK1 \} \\
+    2 & ; falls \; x \in \{ EG, WK2, WK1 \} \\
     1 & ; falls \; x \in \{ AK2, AK1, A1 \} \\
     0 & ; sonst
   \end{cases}
@@ -111,7 +111,7 @@ M_0(x) =
 <!--\newpage-->
 ## Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
 
-Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen, beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht, bis auf die Tatsache dass es zwei zusätzliche Token auf der Stelle <!--$EG$--> hat:
+Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen, beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht:
 
 <!--
 \[
@@ -257,7 +257,7 @@ Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Di
 
 Das Netz der umgebauten Kantine wurde wie folgt modelliert:
 
-<!-- \fig{width=0.80\textwidth}{solution2} -->
+<!-- \fig{width=0.70\textwidth}{solution2} -->
 
 ## Konflikte
 
@@ -270,7 +270,7 @@ Ein Vorwärtskonflikt entsteht am Eingang, wo der "Türsteher" dafür sorgt dass
 -->
 
 
-Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorgt das immer nur an maximal vier von sechs Gerichten (t4-t9) Essen ausgegeben werden kann:
+Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorgt, dass immer nur an maximal vier von sechs Gerichten (t4-t9) Essen ausgegeben werden kann:
 <!--
 
 \[
@@ -290,8 +290,6 @@ Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorg
 
 
 # Definition: Netzmorphismus
-
-
 
 **Alternative Definition**: Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerrißt, d.h. wenn:
 
