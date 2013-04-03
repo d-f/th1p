@@ -1,7 +1,7 @@
 Title:				Theoretische Informatik 1
 Subtitle:			Praktikumsaufgabe 1: Modellierung der Petrinetz-Kantine
-Author:				Lucas Jenss
-ShortAuthor:		Lucas Jenss
+Author:				Lucas Jenss und Tommy Redel  in Gruppe 1
+ShortAuthor:		Lucas Jenss und Tommy Redel
 UseHelvetica:		yes
 Base Header Level:	3
 latex input:		x3-assignment-preamble
@@ -134,7 +134,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M(WK) = 2 \geq 1 = W(WK, t1) \\
   M(WK2) = 1 \geq 1 = W(WK2, t1)
   \\
-  \ma{M}{t1}M' \wedge M' =
+  \ma{M}{t1}M' \textrm{ und } M' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK1 \} \\
@@ -150,7 +150,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M'(WS2) = 1 \geq 1 = W(WS2, t3) \\
   M'(AK2) = 1 \geq 1 = W(AK2, t3) \\
   \\
-  \ma{M'}{t3}M'' \wedge M'' =
+  \ma{M'}{t3}M'' \textrm{ und } M'' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK1, WK2 \} \\
@@ -166,7 +166,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M''(EG) = 1 \geq 1 = W(EG, t2) \\
   M''(WK1) = 2 \geq 1 = W(WK1, t2) \\
   \\
-  \ma{M''}{t2}M''' \wedge M''' =
+  \ma{M''}{t2}M''' \textrm{ und } M''' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK2 \} \\
@@ -183,7 +183,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M'''(WS1) = 1 \geq 1 = W(WS1, t4) \\
   M'''(AK1) = 1 \geq 1 = W(AK1, t4) \\
   \\
-  \ma{M'''}{t4}M'''' \wedge M'''' =
+  \ma{M'''}{t4}M'''' \textrm{ und } M'''' =
     \begin{cases}
       3 & ; falls \; x = KK \\
       2 & ; falls \; x \in \{ WK1, WK2, A1 \} \\
@@ -200,7 +200,7 @@ Nun wird die Transitionfolge <!--$t1 \rightarrow t3 \rightarrow t2 \rightarrow t
   M''''(A1) = 2 \geq 2 = W(A1, t6) \\
   M''''(KK) = 3 \geq 1 = W(KK, t6) \\
   \\
-  \ma{M''''}{t6}M''''' \wedge M''''' =
+  \ma{M''''}{t6}M''''' \textrm{ und } M''''' =
     \begin{cases}
       2 & ; falls \; x \in \{ KK, WK1, WK2, A2 \} \\
       1 & ; falls \; x \in \{ AK1, W\_K \} \\
@@ -221,6 +221,10 @@ usw.
 
 
 ## Erreichbarkeitsgraph der Schaltfolge
+
+Die Reihenfolge der Stellen lautet wie folgt:
+
+    EG, WK2, WK1, WS2, WS1, AK2, AK1, A2, A1, KK, W_K, SS, AG
 
 <!-- \fig{width=0.65\textwidth}{erreichbarkeitsgraph1} -->
 
@@ -243,7 +247,7 @@ Da Snoopy keine Kapazitäten unterstützt, wurde das Netz von Anfang an ohne die
 
 Das geschlossene Netz für fünf Kunden wurde wie folgt modelliert:
 
-<!-- \fig{width=0.9\textwidth}{solution1-closed} -->
+<!-- \fig{width=\textwidth}{solution1-closed} -->
 
 Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Die kombinatorische Explosion (nur fünf Personen, 1500 Kanten) ist das Resultat der Tatsache, dass, ausgehend von jedem Knoten, fast alle Transitionen schalten können, da das Netz viele Transitionen, aber nur wenige Limitierungen für das Schaltverhalten dieser hat. Wenn man den Graph von Charlie mit dem "TreeLayout" rendern lässt, sieht man, dass er bei dem Knoten "Alle Personen befinden sich am Eingang" anfängt, und dann immer breiter wird. Die Breite lässt sich dadurch erklären, dass die Anzahl der Möglichkeiten, welche Transition als nächstes schaltet wächst, je mehr Personen/Token sich innerhalb des Netztes befinden. Nachdem der Graph seine maximale Breite erreicht hat, fängt er wieder an "zusammenzuschrumpfen", bis er im Knoten "Alle Personen befinden sich im Speisesaal" wieder nur eine Breite von einem Knoten hat. Wenn sich also nun alle Personen im Speisesaal versammelt haben, haben diese nur noch die Möglichkeit wieder zum Eingang zurückzukehren und wieder ein Gericht zu wählen. Da an dieser Stelle aber bereits alle möglichen Durchläufe der fünf Personen durch das Netz im Graph vorhanden sind, werden keine neuen Knoten erzeugt, sondern lediglich Kanten zu den bereits bestehenden. Hier zur Referenz noch einmal die Form des Graphen (bei dem leider die oberen und unteren Endknoten abgeschnitten sind):
 
