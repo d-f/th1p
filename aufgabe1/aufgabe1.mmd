@@ -259,34 +259,6 @@ Das Netz der umgebauten Kantine wurde wie folgt modelliert:
 
 <!-- \fig{width=0.70\textwidth}{solution2} -->
 
-## Konflikte
-
-Ein Vorwärtskonflikt entsteht am Eingang, wo der "Türsteher" dafür sorgt dass maximal 16 Personen eintreten können.
-
-<!--
-\[
-  \vb{t17} \cap \vb{t18} \cap \vb{t19} = \{ \op{Tuersteher} \} \neq \emptyset
-\]
--->
-
-
-Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorgt, dass immer nur an maximal vier von sechs Gerichten (t4-t9) Essen ausgegeben werden kann:
-<!--
-
-\[
-  \begin{array}{c}
-    \vb{t4} = \{ WS1, BD \} \\
-    \vb{t5} = \{ WS1, BD \} \\
-    \vb{t6} = \{ WS2, BD \} \\
-    \vb{t7} = \{ WS2, BD \} \\
-    \vb{t8} = \{ WS3, BD \} \\
-    \vb{t9} = \{ WS3, BD \} \\
-    \\
-    \vb{t4} \cap \vb{t5} \cap \vb{t6} \cap \vb{t7} \cap \vb{t8} \cap \vb{t9} = \{ BD \} \neq \emptyset
-  \end{array}
-\]
--->
-
 
 
 # Definition: Netzmorphismus
@@ -297,5 +269,17 @@ Ein weiterer Konflikt entsteht bei der "Bediensteten" Stelle, welche dafür sorg
   (x, y) \in F_1 \Rightarrow f(x) = f(y) \vee (f(x), f(y)) \in F_2
 \]-->
 
+Quelle: Petri-Netze - Grundlagen und Anwendung (Bernd Baumgarten), BI-Wiss.-Verl., 1990, ISBN 3-411-14291-X
 
+<!-- \fig{width=\textwidth}{netzmorphismus} -->
 
+Das gezeigte Beispiel ist laut der alternativen Definition ein Netzmorphismus, mit der Funktion
+
+<!--\[
+f(x) = \begin{cases}
+  (s3, s3) & ; falls \; x = (s1, t1)\\
+  (s3, t4) & ; falls \; x = (t1, s2)\\
+  (t4, t4) & ; falls \; x = (s2, t2)\\
+  (t4, s3) & ; falls \; x = (t2, s1)
+\end{cases}
+\]-->
