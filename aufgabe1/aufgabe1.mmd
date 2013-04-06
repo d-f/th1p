@@ -316,9 +316,10 @@ Als Beweis für diese Behauptung kann wieder der obige Konflikt zwischen <!--$t4
 In diesem Konflikt war <!--$M(BD)$--> kleiner als die Summe der Kantengewichte der genannten Transitionen. Demnach ist die maximale gleichzeitige Bearbeitung von Kunden abhängig von
 der Anzahl der Bediensteten. Daraus resultiert, dass maximal vier der oben genannten Transitionen gleichzeitig schalten können.
 
+<!--\newpage-->
 # Definition: Netzmorphismus
 
-Padberg:
+In der Vorlesung haben wir eine Definition von Netzmorphismus kennengelernt, welch eine Tupel <!--$f = (f_P, t_T)$--> beschreibt, wobei <!--$f_P$--> die Stellenabbildungsfunktion und <!--$f_T$--> die Transitionsabbildungsfunktion ist. Zusätzlich wird verlangt, dass die Vorbereiche und Nachbereiche einer Transition gewahrt werden müssen, oder mit anderen Worten, dass die Summe der eingehenden und ausgehenden Kantengewichte im neuen Netz erhalten bleiben muss. "Alles andere wäre doof!" (Padberg, 2013).
 
 > Vorbereich und Nachbereich müssen gewahrt werden. Alles andere wäre doof!
 
@@ -326,7 +327,9 @@ Padberg:
 * In Padbergs Def gibt es für Transitionen und Stellen jeweils eine Abbildungsfunktion, d.h. man kann keine Stelle auf eine Transition abbilden, oder umgekehrt.
 
 
-**Alternative Definition**: Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerrißt, d.h. wenn:
+## Alternative Definition
+
+Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerrißt, d.h. wenn:
 
 <!--\[
   (x, y) \in F_1 \Rightarrow f(x) = f(y) \vee (f(x), f(y)) \in F_2
@@ -346,3 +349,8 @@ f(x) = \begin{cases}
   (t4, s3) & ; falls \; x = (t2, s1)
 \end{cases}
 \]-->
+
+Diese deckt sich nicht mit der Definition aus der Vorlesung, da sie
+
+1. die Abbildung von Stellen auf Transitionen und umgekehrt erlaubt
+2. die Kantengewichte in Vor- und Nachbereichen nicht wahrt. Im Beispiel haben <!--$t_2$--> und <!--$s_2$--> jeweils eine eingehende Kante, deren Abbildung <!--$t_4$--> hingegen nur eine.
