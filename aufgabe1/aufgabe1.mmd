@@ -263,7 +263,56 @@ Das Netz der umgebauten Kantine wurde wie folgt modelliert:
 
 <!-- \fig{width=0.70\textwidth}{solution2} -->
 
+## Konflikte und Nebenläufigkeit
 
+Nach der in der Vorlesung behandelten Definition treten Konflikte zwischen zwei Transitionen <!--$t_1$--> und <!--$t_2$--> immer dann auf, wenn <!--$t1$--> und <!--$t2$-->
+<!--$M$-->-aktiviert sind und sich im Vorbereich von<!--$t1$--> und <!--$t2$--> eine **gemeinsame** Stelle <!--$p$--> befindet, dessen Markierung die Summe der Kantengewichte
+<!--$W(p, t_1)$--> und <!--$W(p, t_2)$--> unterschreitet.
+
+Eine Nebenläufigkeit zwischen zwei Transitionen <!--$t_1$--> und <!--$t_2$--> besteht, wenn <!--$t1$--> und <!--$t2$-->
+<!--$M$-->-aktiviert sind und sich im Vorbereich von<!--$t1$--> und <!--$t2$--> eine **gemeinsame** Stelle <!--$p$--> befindet, dessen Markierung gleich der Summe der Kantengewichte
+<!--$W(p, t_1)$--> und <!--$W(p, t_2)$--> ist oder diese sogar überschreitet.
+
+### Teil (a)
+Zu Beginn der Simulation existieren noch keine Konflikte, da lediglich die Transitionen <!--$WS1$-->, <!--$WS1$--> und <!--$WS1$--> schalten können und auf den Stellen
+in den Vorbereichen genügend Token liegen.
+
+Ein erster Konflikt ergibt sich im Laufe der Simulation jeweils an den Warteschlangen <!--$WS1$-->, <!--$WS2$--> und <!--$WS3$-->.
+Der Konflikt soll im Folgenden am Beispiel von <!--$WS1$--> erläutert werden. Die Markierung <!--$M(WS1)$--> soll <!--$1$--> betragen. 
+<!--
+\[
+\begin{array}{c}
+  \vb{t4} \cap \vb{t5} = \{ WS1 \} \\
+  M(WS1) = 1 < W(WS1, t4) + W(WS1, t5) = 2
+  1 < 2
+\end{array}
+\]
+-->
+<!--$t4$--> und <!--$t5$--> stehen also in Konflikt miteinander, da <!--$2$--> Token benötigt werden, um beide Transitionen zu schalten, jedoch nur <!--$1$-->
+Token vorhanden ist.
+Dieser Beweis lässt sich analog auf die Transitionspaare <!--$(t6, t7)$--> und <!--$(t8, t9)1$--> sowie dessen Warteschlangen <!--$WS2$--> und <!--$WS3$--> übertragen.
+
+Ein weiterer Konflikt befindet sich im Bereich der Ausgaben, da es insgesamt 6 Essensausgaben und nur 4 Bedienstete gibt.
+<!--
+\[
+\begin{array}{c}
+  \vb{t4} \cap \vb{t5} \cap \vb{t6} \cap \vb{t7} \cap \vb{t8} \cap \vb{t9} = \{ BD \} \\
+  M(BD) = 4 < W(BD, t4) + W(BD, t5) + W(BD, t6) + W(BD, t7) + W(BD, t8) + W(BD, t9) = 6
+  4 < 6
+\end{array}
+\]
+-->
+Demnach stehen alle sechs Transitionen jeweils miteinander in Konflikt bezüglich der Stelle <!--$BD$-->.
+
+Im Bereich der Eingangshalle <!--$EH$--> sowie beim Türsteher <!--$Tuersteher$--> kann es ebenfalls zu Konflikten kommen, sofern auf den Stellen weniger als drei Token liegen.
+
+### Teil (b)
+
+Unter der Annahme, dass sich genügend Kunden in den jeweiligen Warteschlangen befinden, ist die gleichzeitige Ausgabe von Essen abhängig von der Anzahl der Bediensteten.
+Da die Stelle <!--$BD$--> hier vier Markierungen aufweist, können also maximal vier Kunden gleichzeitig ihre Mahlzeit bekommen.
+Als Beweis für diese Behauptung kann wieder der obige Konflikt zwischen <!--$t4$-->, <!--$t5$-->, <!--$t6$-->, <!--$t7$-->, <!--$t8$--> und <!--$t9$--> herangezogen werden.
+In diesem Konflikt war <!--$M(BD)$--> kleiner als die Summe der Kantengewichte der genannten Transitionen. Demnach ist die maximale gleichzeitige Bearbeitung von Kunden abhängig von
+der Anzahl der Bediensteten. Daraus resultiert, dass maximal vier der oben genannten Transitionen gleichzeitig schalten können.
 
 # Definition: Netzmorphismus
 
