@@ -40,16 +40,22 @@ Die erste zu treffende Entscheidung war die Art und Weise der Warteschlangen-Mod
 
 <!-- \fig{width=0.75\textwidth}{queue} -->
 
-Um sicherzustellen dass sich in der Stelle **Warteschlange** immer max. zwei Besucher befinden, wird eine zusätzliche Stelle **WarteschlangeKapazitaet** hinzugefügt, deren Tokenanzahl der Kapazität der Warteschlange entspricht (im Beispiel zwei). Die Transition <!--\transition{Eingang}{Warteschlange}--> wird nun mit einer zusätzlichen Kante <!--\transition{Warteschlange\-Kapazitaet}{Warteschlange}--> versehen, sodass diese nur schalten kann wenn mindestens ein Kapazitätstoken vorhanden ist. Die Transition welche aus der Warteschlange hinausführt wird analog mit einer Kante versehen, welche ein Token in die "WarteschlangeKapazitaet" Stelle hinzufügt. Das selbe Verfahren wird eingesetzt, um sicherzugehen dass sich maximal eine Person zur Zeit in der Ausgabe befindet.
+Um sicherzustellen, dass sich in der Stelle **Warteschlange** immer max. zwei Besucher befinden, wird eine zusätzliche Stelle **WarteschlangeKapazitaet**
+hinzugefügt, deren Tokenanzahl der Kapazität der Warteschlange entspricht (im Beispiel zwei). Die Transition <!--\transition{Eingang}{Warteschlange}-->
+wird nun mit einer zusätzlichen Kante <!--\transition{Warteschlange\-Kapazitaet}{Warteschlange}--> versehen, sodass diese nur schalten kann, wenn mindestens
+ein Kapazitätstoken vorhanden ist. Die Transition, welche aus der Warteschlange hinausführt, wird analog mit einer Kante versehen, welche ein Token in die
+"WarteschlangeKapazitaet"-Stelle hinzufügt. Das selbe Verfahren wird eingesetzt, um sicherzugehen, dass sich maximal eine Person zur Zeit in der Ausgabe befindet.
 
-In der Gesamtlösung verwenden wir diese Technik ebenfalls um die Warteschlange an der Kasse auf drei Personen zu begrenzen. Die Bedienstete, welche für die Essensausgabe verantwortlich ist, wurde als zusätzliches Token modelliert, welches zwischen den beiden Ausgaben für die Gerichte alterniert. Eine erfolgreiche Ausgabe und anschließende Transition zur Kasse ist immer nur dann möglich, wenn sich zwei Token in der Ausgabe befinden, welche die Person sowie die Bedienstete repräsentieren:
+In der Gesamtlösung verwenden wir diese Technik ebenfalls, um die Warteschlange an der Kasse auf drei Personen zu begrenzen. Die Bedienstete, welche für die Essensausgabe
+verantwortlich ist, wurde als zusätzliches Token modelliert, welches zwischen den beiden Ausgaben für die Gerichte alterniert. Eine erfolgreiche Ausgabe und anschließende
+Transition zur Kasse ist immer nur dann möglich, wenn sich zwei Token in der Ausgabe befinden, welche die Person sowie die Bedienstete repräsentieren:
 
 <!-- \fig{width=\textwidth}{solution1} -->
 
 
 ## Formale Angabe des Netzes
 
-Ein S/T-Netz wird durch ein 4-Tupel <!--$N = (P,T,W,M_0)$--> definiert. Die einzelnen Bestandteile werden im folgenden aufgeführt:
+Ein S/T-Netz wird durch ein 4-Tupel <!--$N = (P,T,W,M_0)$--> definiert. Die einzelnen Bestandteile werden im Folgenden aufgeführt:
 
 <!--
 \[
@@ -111,7 +117,8 @@ M_0(x) =
 <!--\newpage-->
 ## Formale Schaltfolge für zwei Personen mit unterschiedlichen Gerichten
 
-Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen, beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht:
+Ausgehend vom im vorherigen Abschnitt beschriebenen Netz ist folgende Schaltfolge möglich, sodass zwei Personen unterschiedliche Gerichte einnehmen,
+beginnend mit einem <!--$M$--> welches <!--$M_0$--> gleicht:
 
 <!--
 \[
@@ -233,7 +240,8 @@ Die Reihenfolge der Stellen lautet wie folgt:
 
 ## Netzkomplement
 
-Da Snoopy keine Kapazitäten unterstützt, wurde das Netz von Anfang an ohne diese modelliert. Das Netzkomplement ist somit nicht zu berechnen, bzw. es ist identisch mit der bereits gezeigen Lösung.
+Da Snoopy keine Kapazitäten unterstützt, wurde das Netz von Anfang an ohne diese modelliert. Das Netzkomplement ist somit nicht zu berechnen, bzw. es ist identisch
+mit der bereits gezeigten Lösung.
 
 
 
@@ -249,7 +257,14 @@ Das geschlossene Netz für fünf Kunden wurde wie folgt modelliert:
 
 <!-- \fig{width=\textwidth}{solution1-closed} -->
 
-Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Die kombinatorische Explosion (nur fünf Personen, 1500 Kanten) ist das Resultat der Tatsache, dass, ausgehend von jedem Knoten, fast alle Transitionen schalten können, da das Netz viele Transitionen, aber nur wenige Limitierungen für das Schaltverhalten dieser hat. Wenn man den Graph von Charlie mit dem "TreeLayout" rendern lässt, sieht man, dass er bei dem Knoten "Alle Personen befinden sich am Eingang" anfängt, und dann immer breiter wird. Die Breite lässt sich dadurch erklären, dass die Anzahl der Möglichkeiten, welche Transition als nächstes schaltet wächst, je mehr Personen/Token sich innerhalb des Netztes befinden. Nachdem der Graph seine maximale Breite erreicht hat, fängt er wieder an "zusammenzuschrumpfen", bis er im Knoten "Alle Personen befinden sich im Speisesaal" wieder nur eine Breite von einem Knoten hat. Wenn sich also nun alle Personen im Speisesaal versammelt haben, haben diese nur noch die Möglichkeit wieder zum Eingang zurückzukehren und wieder ein Gericht zu wählen. Da an dieser Stelle aber bereits alle möglichen Durchläufe der fünf Personen durch das Netz im Graph vorhanden sind, werden keine neuen Knoten erzeugt, sondern lediglich Kanten zu den bereits bestehenden. Hier zur Referenz noch einmal die Form des Graphen (bei dem leider die oberen und unteren Endknoten abgeschnitten sind):
+Der daraus resultierende Erreichbarkeitsgraph hat 484 Knoten und 1518 Kanten. Die kombinatorische Explosion (nur fünf Personen, 1500 Kanten) ist das Resultat der Tatsache, dass,
+ausgehend von jedem Knoten, fast alle Transitionen schalten können, da das Netz viele Transitionen, aber nur wenige Limitierungen für das Schaltverhalten dieser hat. Wenn man den
+Graph von Charlie mit dem "TreeLayout" rendern lässt, sieht man, dass er bei dem Knoten "Alle Personen befinden sich am Eingang" anfängt, und dann immer breiter wird. Die Breite
+lässt sich dadurch erklären, dass die Anzahl der Möglichkeiten, welche Transition als nächstes schaltet, wächst, je mehr Personen/Token sich innerhalb des Netztes befinden.
+Nachdem der Graph seine maximale Breite erreicht hat, fängt er wieder an "zusammenzuschrumpfen", bis er im Knoten "Alle Personen befinden sich im Speisesaal" wieder nur eine
+Breite von einem Knoten hat. Wenn sich also nun alle Personen im Speisesaal versammelt haben, haben diese nur noch die Möglichkeit wieder zum Eingang zurückzukehren und wieder
+ein Gericht zu wählen. Da an dieser Stelle aber bereits alle möglichen Durchläufe der fünf Personen durch das Netz im Graph vorhanden sind, werden keine neuen Knoten erzeugt,
+sondern lediglich Kanten zu den bereits bestehenden. Hier zur Referenz noch einmal die Form des Graphen (bei dem leider die oberen und unteren Endknoten abgeschnitten sind):
 
 <!-- \fig{width=0.5\textwidth}{charlie-graph} -->
 
@@ -270,7 +285,7 @@ Nach der in der Vorlesung behandelten Definition treten Konflikte zwischen zwei 
 <!--$W(p, t_1)$--> und <!--$W(p, t_2)$--> unterschreitet.
 
 Eine Nebenläufigkeit zwischen zwei Transitionen <!--$t_1$--> und <!--$t_2$--> besteht, wenn <!--$t1$--> und <!--$t2$-->
-<!--$M$-->-aktiviert sind und sich im Vorbereich von<!--$t1$--> und <!--$t2$--> eine **gemeinsame** Stelle <!--$p$--> befindet, dessen Markierung gleich der Summe der Kantengewichte
+<!--$M$-->-aktiviert sind und sich im Vorbereich von <!--$t1$--> und <!--$t2$--> eine **gemeinsame** Stelle <!--$p$--> befindet, dessen Markierung gleich der Summe der Kantengewichte
 <!--$W(p, t_1)$--> und <!--$W(p, t_2)$--> ist oder diese sogar überschreitet.
 
 ### Teil (a)
@@ -290,7 +305,7 @@ Der Konflikt soll im Folgenden am Beispiel von <!--$WS1$--> erläutert werden. D
 -->
 <!--$t4$--> und <!--$t5$--> stehen also in Konflikt miteinander, da <!--$2$--> Token benötigt werden, um beide Transitionen zu schalten, jedoch nur <!--$1$-->
 Token vorhanden ist.
-Dieser Beweis lässt sich analog auf die Transitionspaare <!--$(t6, t7)$--> und <!--$(t8, t9)1$--> sowie dessen Warteschlangen <!--$WS2$--> und <!--$WS3$--> übertragen.
+Dieser Beweis lässt sich analog auf die Transitionspaare <!--$(t6, t7)$--> und <!--$(t8, t9)$--> sowie dessen Warteschlangen <!--$WS2$--> und <!--$WS3$--> übertragen.
 
 Ein weiterer Konflikt befindet sich im Bereich der Ausgaben, da es insgesamt 6 Essensausgaben und nur 4 Bedienstete gibt.
 <!--
@@ -319,12 +334,15 @@ der Anzahl der Bediensteten. Daraus resultiert, dass maximal vier der oben genan
 <!--\newpage-->
 # Definition: Netzmorphismus
 
-In der Vorlesung haben wir eine Definition von Netzmorphismus kennengelernt, welch eine Tupel <!--$f = (f_P, t_T)$--> beschreibt, wobei <!--$f_P$--> die Stellenabbildungsfunktion und <!--$f_T$--> die Transitionsabbildungsfunktion ist. Zusätzlich wird verlangt, dass die Vorbereiche und Nachbereiche einer Transition gewahrt werden müssen, oder mit anderen Worten, dass die Summe der eingehenden und ausgehenden Kantengewichte im neuen Netz erhalten bleiben muss. "Alles andere wäre doof!" (Padberg, 2013).
+In der Vorlesung haben wir eine Definition von Netzmorphismus kennengelernt, welche ein Tupel <!--$f = (f_P, t_T)$--> beschreibt, wobei <!--$f_P$--> die Stellenabbildungsfunktion
+und <!--$f_T$--> die Transitionsabbildungsfunktion ist. Zusätzlich wird verlangt, dass die Vorbereiche und Nachbereiche einer Transition gewahrt werden müssen, oder mit anderen Worten,
+dass die Summe der eingehenden und ausgehenden Kantengewichte im neuen Netz erhalten bleiben muss. "Alles andere wäre doof!" (Padberg, 2013).
 
 
 ## Alternative Definition
 
-Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerrißt, d.h. wenn:
+Eine Netzabbildung <!--$f$--> von <!--$N_1$--> in <!--$N_2$--> bildet <!--$S_1 \cup T_1$--> in <!--$S_2 \cup T_2$--> ab. Wir nennen sie Netzmorphismus, wenn sie keine Kanten zerreißt,
+d.h. wenn:
 
 <!--\[
   (x, y) \in F_1 \Rightarrow f(x) = f(y) \vee (f(x), f(y)) \in F_2
