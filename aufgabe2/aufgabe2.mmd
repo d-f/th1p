@@ -11,6 +11,7 @@ latex footer:		x3-assignment-end
 
 
 <!--
+
 %\sloppy
 
 \newcommand{\transition}[2]{\textrm{#1} $\rightarrow$ \textrm{#2}}
@@ -51,60 +52,73 @@ Zwischen den Weichen wurde ein weiterer Gleisabschnitt hinzugefügt.
 
 TODO: Lösung Aufgabenteil 2 einfügen
 
+<!--\newpage-->
 # Teilaufgabe 3
 
 In der 3. Teilaufgabe sollte das erstellte Netz aus Teilaufgabe 2 näher analysiert werden, um die Korrektheit der der Modellierung zu belegen.
 
-Dafür wurden zunächst die S-Invarianten mit Hilfe von Charlie berechnet, was zu folgendem Ouput führte:
+Dafür wurden zunächst die S-Invarianten mit Hilfe von Charlie berechnet, was zu folgendem Ouput führte.
 
-\begin{lstlisting}
+<!--
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{1pt}
+-->
+Deutlich zu erkennen ist hier die konstante Anzahl der Token auf jeder Stelle, sodass durch die S-Invarianten nachgewiesen wurde, dass keine Züge hinzukommen oder verloren gehen können.
+<!--
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.5\textwidth}%
+	\scriptsize%
+\begin{lstlisting}[aboveskip=0pt,belowskip=0pt]
 minimal semipositive place invariants=
 1	|	16.SchrankenGeschlossen		:1,
-	|	17.SchrankenOffen		:1
-2	|	18.GA9		:1,
-	|	23.GAK9		:1
-3	|	19.WeicheOben1		:1,
-	|	20.WeicheUnten1		:1
-4	|	21.WeicheUnten2		:1,
-	|	22.WeicheOben2		:1
-5	|	24.WeicheOben3		:1,
-	|	25.WeicheUnten3		:1
-6	|	26.WeicheOben4		:1,
-	|	27.WeicheUnten4		:1
-7	|	7.GA7		:1,
-	|	12.GAK7		:1
-8	|	1.GA1		:1,
-	|	14.GAK1		:1
-9	|	6.GA3		:1,
-	|	15.GAK3		:1
-10	|	0.GA8		:1,
-	|	2.GA2		:1,
-	|	3.GA6		:1,
-	|	5.GA4		:1,
-	|	8.GAK2		:1,
-	|	9.GAK4		:1,
-	|	11.GAK6		:1,
-	|	13.GAK8		:1,
-	|	18.GA9		:1
-11	|	4.GA5		:1,
-	|	10.GAK5		:1
-12	|	0.GA8		:1,
-	|	1.GA1		:1,
-	|	2.GA2		:1,
-	|	3.GA6		:1,
-	|	4.GA5		:1,
-	|	5.GA4		:1,
-	|	6.GA3		:1,
-	|	7.GA7		:1,
-	|	18.GA9		:1
-13	|	8.GAK2		:1,
-	|	9.GAK4		:1,
-	|	10.GAK5		:1,
-	|	11.GAK6		:1,
-	|	12.GAK7		:1,
-	|	13.GAK8		:1,
-	|	14.GAK1		:1,
-	|	15.GAK3		:1
+	|	17.SchrankenOffen			:1
+2	|	18.GA9						:1,
+	|	23.GAK9						:1
+3	|	19.WeicheOben1				:1,
+	|	20.WeicheUnten1				:1
+4	|	21.WeicheUnten2				:1,
+	|	22.WeicheOben2				:1
+5	|	24.WeicheOben3				:1,
+	|	25.WeicheUnten3				:1
+6	|	26.WeicheOben4				:1,
+	|	27.WeicheUnten4				:1
+7	|	7.GA7						:1,
+	|	12.GAK7						:1
+8	|	1.GA1						:1,
+	|	14.GAK1						:1
+9	|	6.GA3						:1,
+	|	15.GAK3						:1
+10	|	0.GA8						:1,
+	|	2.GA2						:1,
+	|	3.GA6						:1,
+	|	5.GA4						:1,
+	|	8.GAK2						:1,
+	|	9.GAK4						:1,
+	|	11.GAK6						:1,
+	|	13.GAK8						:1,
+	|	18.GA9						:1
+11	|	4.GA5						:1,
+	|	10.GAK5						:1
+12	|	0.GA8						:1,
+	|	1.GA1						:1,
+	|	2.GA2						:1,
+	|	3.GA6						:1,
+	|	4.GA5						:1,
+	|	5.GA4						:1,
+	|	6.GA3						:1,
+	|	7.GA7						:1,
+	|	18.GA9						:1
+13	|	8.GAK2						:1,
+	|	9.GAK4						:1,
+	|	10.GAK5						:1,
+	|	11.GAK6						:1,
+	|	12.GAK7						:1,
+	|	13.GAK8						:1,
+	|	14.GAK1						:1,
+	|	15.GAK3						:1
 \end{lstlisting}
+\end{minipage}
+-->
 
-Deutlich zu erkennen ist hier die konstante Anzahl der Token auf jeder Stelle, sodass durch die S-Invarianten nachgewiesen wurde, dass keine Züge hinzukommen oder verloren gehen können.
+
