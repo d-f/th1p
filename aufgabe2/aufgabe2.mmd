@@ -58,6 +58,8 @@ Zwischen den Weichen wurde ein weiterer Gleisabschnitt hinzugefügt.
 
 In der 3. Teilaufgabe sollte das erstellte Netz aus Teilaufgabe 2 näher analysiert werden, um die Korrektheit der Modellierung zu belegen.
 
+## 3a
+
 Dafür wurden zunächst die S-Invarianten mit Hilfe von Charlie berechnet, was zu folgendem Ouput führte.
 
 <!--
@@ -124,6 +126,7 @@ minimal semipositive place invariants=
 \end{minipage}
 -->
 
+## 3b
 <!--
 \begin{minipage}[t]{0.45\textwidth}
 \vspace{1pt}
@@ -190,4 +193,15 @@ minimal semipositive transition invariants=
 \end{minipage}
 -->
 
+## 3c
 
+## 3d
+
+* Auf einem Gleisabschnitt ist höchstens ein Zug/Die Anzahl der Züge verändert sich nicht.
+	* Durch das Hinzufügen von weiteren Zügen bleiben diese Eigenschaften prinzipiell erhalten, solange man nicht absichtlich
+	zwei Züge auf einer Stelle platziert.
+* In jeder Situation kann wenigstens ein Zug noch fahren.
+	* Würde man auf jede Stelle einen Zug setzen, kann keiner dieser Züge mehr fahren, da es dann kein freies Gleisabschnitt gibt,
+	das befahren werden kann.
+	* Demnach muss man die maximale Anzahl der Züge beschränken in Abhängigkeit von der Anzahl der Gleisabschnitt, die befahren werden können.
+		* 
