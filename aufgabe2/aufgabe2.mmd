@@ -195,6 +195,8 @@ minimal semipositive transition invariants=
 
 ## 3c
 
+TODO Erreichbarkeitsgraph von Aufgabe 1
+
 ## 3d
 
 * Auf einem Gleisabschnitt ist höchstens ein Zug/Die Anzahl der Züge verändert sich nicht.
@@ -203,5 +205,10 @@ minimal semipositive transition invariants=
 * In jeder Situation kann wenigstens ein Zug noch fahren.
 	* Würde man auf jede Stelle einen Zug setzen, kann keiner dieser Züge mehr fahren, da es dann kein freies Gleisabschnitt gibt,
 	das befahren werden kann.
-	* Demnach muss man die maximale Anzahl der Züge beschränken in Abhängigkeit von der Anzahl der Gleisabschnitt, die befahren werden können.
-		* 
+	* Demnach muss man die maximale Anzahl der Züge beschränken in Abhängigkeit von der Anzahl der Gleisabschnitte, die befahren werden können. Sei <!--$n$-->
+	die Anzahl der Gleisabschnitte, dann gilt
+		* wenn die Anzahl der Züge <!--$n - 1$--> beträgt, dann kann nicht immer gewährleistet werden, dass alle Züge fahren können, da sich diese auf den äußeren
+		Gleisabschnitten befinden können. Der Gleisabschnitt zwischen den Weichen ist somit leer. Stehen die weichen nun so, dass nur der äußere Ring befahren werden
+		kann, kann demnach kein Zug auf den Gleisabschnitt zwischen den Weichen fahren und somit stehen alle Züge.
+		* wenn die Anzahl der Züge <!--$n - 2$--> beträgt, kann wieder gewährleistet werden, dass mindestens ein Zug fahren kann, da selbst unter dem oben genannten
+		Fall noch ein Gleisabschnitt im äußeren Ring frei ist, der befahren werden kann.
