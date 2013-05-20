@@ -20,5 +20,5 @@ fi
 
 target=$1
 target_name=$(basename $target .mmd)
-mmd2tex $1 && omgtex.rb -o "${target_name}.tex"
+mmd2tex $1 && omgtex.rb -oe "${target_name}.tex"
 git clean -Xf
