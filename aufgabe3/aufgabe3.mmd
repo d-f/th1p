@@ -1,0 +1,84 @@
+Title:              Theoretische Informatik 1
+Subtitle:           Praktikumsaufgabe 3
+Author:             Lucas Jenss und Tommy Redel in Gruppe 1
+ShortAuthor:        Lucas Jenss und Tommy Redel
+UseHelvetica:       yes
+Base Header Level:  3
+latex input:        x3-assignment-preamble
+latex input:        x3-assignment-mmd-compat
+latex input:        x3-assignment-begin
+latex footer:       x3-assignment-end
+
+
+<!--
+
+%\sloppy
+
+\newcommand{\transition}[2]{\textrm{#1} $\rightarrow$ \textrm{#2}}
+
+\newcommand{\fig}[2]{%
+  \vspace{\parskip}%
+  \begin{center}%
+    \includegraphics[#1]{figures/#2}%
+  \end{center}%
+}
+
+\newcommand{\op}[1]{\operatorname{#1}}
+
+% Vorbereich und Nachbereich
+\newcommand{\vb}[1]{\bullet \, #1}
+\newcommand{\nb}[1]{#1 \, \bullet}
+
+% aktivierte Transition
+\newcommand{\ma}[2]{#1[#2\rangle}
+-->
+
+# Definitionen
+
+## Lebendigkeit
+
+Eine Transition <!--$t \in T$--> ist lebendig in <!--$N_{M_0}$-->, wenn sie für alle Markierungen <!--$M \in EG$--> M-erreichbar ist.
+
+Ein Netz <!--$N_{M_0}$--> ist lebendig, wenn alle seine Transitionen lebendig sind.
+
+
+
+# Eigenschaften von Netzen
+
+1. Reversibilität - Lebendigkeit
+
+2. Beschränktheit - Lebendigkeit
+
+3. Beschränktheit - Reversibilität
+
+4. Stelleninvarianten - Lebendigkeit
+
+5. Stelleninvarianten - Reversibilität
+
+6. Stelleninvarianten - Beschränktheit
+
+7. Transitionsinvarianten - Lebendigkeit
+
+Eine echt positive Transitionsinvariante und Lebendigkeit sind nur unter Einschränkung verknüpft. Nimmt man eine endliches, beschränktes, lebendiges Netz <!--$N$-->, dann muss es für dieses Netz auch eine echt positive Transitionsinvariante geben.
+
+Für ein unbeschränktes Netz gilt dieses nicht. Das folgende Netz, beispielsweise, ist lebendig, hat aber keine T-Invariante:
+
+    Transition ---> Stelle
+
+Andersherum gilt
+
+<!--\fig{width=0.3\textwidth}{T-Invariante-Lebendigkeit}-->
+
+8. Transitionsinvarianten - Reversibilität
+
+9. Transitionsinvarianten - Beschränktheit
+
+10. Transitionsinvarianten - Stelleninvarianten
+
+11. Überdeckungsgraph - Lebendigkeit
+
+12. Überdeckungsgraph - Reversibilität
+
+13. Überdecksungsgraph - Beschränktheit
+
+14. Überdeckungsgraph - Stelleninvarianten
