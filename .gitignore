@@ -1,3 +1,5 @@
+*.zip
+*.pyg
 *.tex
 *.pdf
 *.dpth
