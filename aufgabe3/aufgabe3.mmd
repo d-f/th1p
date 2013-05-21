@@ -45,21 +45,6 @@ Ein Netz <!--$N_{M_0}$--> ist lebendig, wenn alle seine Transitionen lebendig si
 
 # Eigenschaften von Netzen
 
-5.
-
-9. Transitionsinvarianten - Beschränktheit
-
-10. Transitionsinvarianten - Stelleninvarianten
-
-11. Überdeckungsgraph - Lebendigkeit
-
-12. Überdeckungsgraph - Reversibilität
-
-14. Überdeckungsgraph - Stelleninvarianten
-
-
-
-<!--\newpage-->
 ## Reversibilität - Lebendigkeit (1)
 
 Unabhängig.
@@ -106,7 +91,8 @@ Unabhängig.
 <!--\newpage-->
 ## Stelleninvarianten - Beschränktheit (6)
 
-Wenn ein Netz genau _eine_ Stelleninvariante hat, d.h. <!--$I^T$-->, als homogenes Gleichungssystem gelöst, genau eine Lösung hat, dann muss das Netz beschränkt sein, denn dann bleibt die nach der Invariante gewichtete Tokensumme immer gleich.
+Wenn ein Netz eine Stelleninvariante hat, d.h. <!--$I^T$-->, als homogenes Gleichungssystem gelöst, eine Lösung hat, dann muss das Netz beschränkt sein, denn dann bleibt die nach der Invariante gewichtete Tokensumme immer gleich. Demnach gilt
+<!--$\op{Stelleninvariante} \Longleftrightarrow \op{Beschraenktheit}$-->.
 
 
 
@@ -122,12 +108,54 @@ Weitere Zusammenhänge sind nicht erkennbar:
 
 
 <!--\newpage-->
-## Transitionsinvarianten - Reversibilität
+## Transitionsinvarianten - Reversibilität (8)
 
 Transitionsinvarianten beschreiben Zyklen im Erreichbarkeitsgraphen eines Netzes <!--$N = (P,T,W)$-->, allerdings unabhängig von der Startmarkierung <!--$M_0$--> des Netzes. Die Existenz einer echt positiven Transitionsinvariante besagt also, dass eine Markierung <!--$M_0$--> existiert, für die das Netz reversibel ist, also dass es einen endlichen Pfad
 <!--$M_0 \xrightarrow{t_1} \ldots \xrightarrow{t_n}M_{n+1}$--> gibt, sodass <!--$M_0 = M_{n+1}$-->.
 
-Eine allgemeine Aussage ist allerdings anhand einer echt positiven Transitionsinvariante nicht treffbar.
+Eine allgemeine Aussage ist allerdings anhand einer echt positiven Transitionsinvariante nicht treffbar. Es gilt zwar, dass ein reversibles Netz auch eine Transitionsinvariante haben muss, allerdings nicht zwingend eine echt positive.
+
+
+<!--\newpage-->
+## Transitionsinvarianten - Beschränktheit (9)
+
+Unabhängig
+
+<!--\fig{width=\textwidth}{T-Invariante-Beschraenkt}-->
+
+
+<!--\newpage-->
+## Transitionsinvarianten - Stelleninvarianten (10)
+
+Die Transitionsinvarianten eines Netzes <!--$N = (P, T, W)$--> sind die Stelleninvarianten des Netzes <!--$N' = (P', T', W')$--> gdw. <!--$W = W'$--> sowie <!--$T' = P$--> und <!--$P' = T$-->.
+
+
+<!--\newpage-->
+## Überdeckungsgraph - Lebendigkeit
+
+Es gilt:
+
+<!--$\left( \forall m \in UG : m \xrightarrow{t_1} \ldots \xrightarrow{t_n} m : T \setminus \{t_1, \ldots, t_n\} = \emptyset \right) \Longrightarrow \operatorname{Lebendig}$-->
+
+Die umgekehrte Annahme gilt nicht, denn im UG ist es nicht möglich, von einer <!--$\omega$-->-Markierung wieder zurück zur Ursprungsmarkierung zu gelangen.
+
+
+
+<!--\newpage-->
+## Überdeckungsgraph - Reversibilität
+
+Es gilt:
+
+<!--$\left( \forall m \in UG : m \xrightarrow{t_1} \ldots \xrightarrow{t_n} M_0 \right) \Longrightarrow \operatorname{Reversibel}$-->
+
+Die umgekehrte Annahme gilt aus dem selben Grund wie für "Überdeckungsgraph - Lebendigkeit" nicht.
+
+
+
+<!--\newpage-->
+## Überdeckungsgraph - Stelleninvarianten
+
+TODO
 
 
 
