@@ -45,7 +45,7 @@ Ein Netz <!--$N_{M_0}$--> ist lebendig, wenn alle seine Transitionen lebendig si
 
 # Eigenschaften von Netzen
 
-## Reversibilität - Lebendigkeit (1)
+## Reversibilität - Lebendigkeit
 
 Unabhängig.
 
@@ -54,7 +54,7 @@ Unabhängig.
 
 
 <!--\newpage-->
-## Beschränktheit - Lebendigkeit (2)
+## Beschränktheit - Lebendigkeit
 
 Unabhängig.
 
@@ -63,7 +63,7 @@ Unabhängig.
 
 
 <!--\newpage-->
-## Beschränktheit - Reversibilität (3)
+## Beschränktheit - Reversibilität
 
 Unabhängig.
 
@@ -71,7 +71,7 @@ Unabhängig.
 
 
 <!--\newpage-->
-## Stelleninvarianten - Lebendigkeit (4)
+## Stelleninvarianten - Lebendigkeit
 
 Unabhängig.
 
@@ -80,7 +80,7 @@ Unabhängig.
 
 
 <!--\newpage-->
-## Stelleninvarianten - Reversibilität (5)
+## Stelleninvarianten - Reversibilität
 
 Unabhängig.
 
@@ -88,8 +88,7 @@ Unabhängig.
 
 
 
-<!--\newpage-->
-## Stelleninvarianten - Beschränktheit (6)
+## Stelleninvarianten - Beschränktheit
 
 Wenn ein Netz eine Stelleninvariante hat, d.h. <!--$I^T$-->, als homogenes Gleichungssystem gelöst, eine Lösung hat, dann muss das Netz beschränkt sein, denn dann bleibt die nach der Invariante gewichtete Tokensumme immer gleich. Demnach gilt
 <!--$\op{Stelleninvariante} \Longleftrightarrow \op{Beschraenktheit}$-->.
@@ -97,7 +96,7 @@ Wenn ein Netz eine Stelleninvariante hat, d.h. <!--$I^T$-->, als homogenes Gleic
 
 
 <!--\newpage-->
-## Transitionsinvarianten - Lebendigkeit (7)
+## Transitionsinvarianten - Lebendigkeit
 
 Eine echt positive Transitionsinvariante und Lebendigkeit sind nur unter Einschränkung verknüpft. Nimmt man eine endliches, beschränktes, lebendiges Netz <!--$N$-->, dann muss es für dieses Netz auch eine echt positive Transitionsinvariante geben.
 
@@ -108,7 +107,7 @@ Weitere Zusammenhänge sind nicht erkennbar:
 
 
 <!--\newpage-->
-## Transitionsinvarianten - Reversibilität (8)
+## Transitionsinvarianten - Reversibilität
 
 Transitionsinvarianten beschreiben Zyklen im Erreichbarkeitsgraphen eines Netzes <!--$N = (P,T,W)$-->, allerdings unabhängig von der Startmarkierung <!--$M_0$--> des Netzes. Die Existenz einer echt positiven Transitionsinvariante besagt also, dass eine Markierung <!--$M_0$--> existiert, für die das Netz reversibel ist, also dass es einen endlichen Pfad
 <!--$M_0 \xrightarrow{t_1} \ldots \xrightarrow{t_n}M_{n+1}$--> gibt, sodass <!--$M_0 = M_{n+1}$-->.
@@ -116,8 +115,7 @@ Transitionsinvarianten beschreiben Zyklen im Erreichbarkeitsgraphen eines Netzes
 Eine allgemeine Aussage ist allerdings anhand einer echt positiven Transitionsinvariante nicht treffbar. Es gilt zwar, dass ein reversibles Netz auch eine Transitionsinvariante haben muss, allerdings nicht zwingend eine echt positive.
 
 
-<!--\newpage-->
-## Transitionsinvarianten - Beschränktheit (9)
+## Transitionsinvarianten - Beschränktheit
 
 Unabhängig
 
@@ -125,12 +123,12 @@ Unabhängig
 
 
 <!--\newpage-->
-## Transitionsinvarianten - Stelleninvarianten (10)
+## Transitionsinvarianten - Stelleninvarianten
 
 Die Transitionsinvarianten eines Netzes <!--$N = (P, T, W)$--> sind die Stelleninvarianten des Netzes <!--$N' = (P', T', W')$--> gdw. <!--$W = W'$--> sowie <!--$T' = P$--> und <!--$P' = T$-->.
 
 
-<!--\newpage-->
+
 ## Überdeckungsgraph - Lebendigkeit
 
 Es gilt:
@@ -141,7 +139,6 @@ Die umgekehrte Annahme gilt nicht, denn im UG ist es nicht möglich, von einer <
 
 
 
-<!--\newpage-->
 ## Überdeckungsgraph - Reversibilität
 
 Es gilt:
@@ -152,52 +149,55 @@ Die umgekehrte Annahme gilt aus dem selben Grund wie für "Überdeckungsgraph - 
 
 
 
-<!--\newpage-->
 ## Überdeckungsgraph - Stelleninvarianten
 
-TODO
+Wenn es im Überdeckungsgraph keine Markierungen gibt, welche ein <!--$\omega$--> enthalten, dann muss das dazugehörige Netz beschränkt sein. Da wir außerdem bereits wissen, dass ein beschränktes Netz auch immer eine Stelleninvariante hat, gilt:
+
+<!--$(\forall m \in UG : \forall x \in m : m \neq \omega) \Longleftrightarrow \operatorname{Stelleninvariante}$-->
 
 
 
-<!--\newpage-->
-## Überdecksungsgraph - Beschränktheit (13)
+## Überdecksungsgraph - Beschränktheit
 
 Ein Netz ist genau dann beschränkt, wenn in seinem Überdeckungsgraphen keine <!--$\omega$-->-Stellen vorkommen.
 
 
 
-<!--\newpage-->
 ## Überdeckungsgraph - Transitionsinvarianten
-Zyklen im Überdeckungsgraphen ohne \omega $\Longrightarrow$ in Zyklus genutzte
+
+Zyklen im Überdeckungsgraphen ohne <!--$\omega \Longrightarrow$--> in Zyklus genutzte
 Transitionen haben T-Invariante
 
 
 
-<!--\newpage-->
 ## Kondensation des EG und Lebendigkeit
+
 KG fasst alle stark zusammenhängenden Komponenten zusammen. Dafür müssen die
 Komponenten lebendig sein. Alle Teile einer Komponente des KG sind lebendig.
-$|KEG| = 1 \Longleftrightarrow Lebendigkeit$
+
+<!--$|KEG| = 1 \Longleftrightarrow Lebendigkeit$-->
 
 
 
-<!--\newpage-->
 ## Kondensation des EG und Reversibilität
-Besteht der KEG aus einer Komponente, ist das Netz reversibel. $|KG| = 1
-\Longrightarrow Reversibilität$
+
+Besteht der KEG aus einer Komponente, ist das Netz reversibel.
+
+<!--$|KG| = 1 \Longrightarrow Reversibilitaet$-->
 
 
 
 <!--\newpage-->
 ## Kondensation des EG und Beschränktheit
+
 Es besteht kein Zusammenhang zwischen der Größe des Kondensationsgraphen und der Beschränktheit des Netzes.
 
 <!--\fig{width=\textwidth}{KEG-Beschraenkt}-->
 
 
 
-<!--\newpage-->
 ## Kondensation des EG und Stelleninvarianten
+
 Der Kondensationsgraph und positive Stelleninvarianten stehen in keinem
 Zusammenhang.
 
@@ -207,58 +207,60 @@ Zusammenhang.
 
 <!--\newpage-->
 ## Kondensation des EG und Transitionsinvarianten
-\left| KEG \right| = 1 $\Longrightarrow$ echt positive T-Invariante
+
+<!--$\left| KEG \right| = 1 \Longrightarrow$--> echt positive T-Invariante
 
 
 
-<!--\newpage-->
 ## Kondensation des EG und Überdeckungsgraph
 Der KEG stellt die stark zusammenhängenden Knoten des Überdeckungsgraphen ab.
 
 
 
-<!--\newpage-->
 ## Verklemmung und Lebendigkeit
-$lebendig \Longrightarrow verklemmungsfrei$
-\\ $verklemmt \Longrightarrow \neg lebendig$
+
+<!--$lebendig \Longrightarrow verklemmungsfrei$
+\\ $verklemmt \Longrightarrow \neg lebendig$-->
 
 
 
-<!--\newpage-->
+
 ## Verklemmung und Reversibilität
 Ist ein S/T-Netz reversibel, hat es keine Verklemmungen. Da durch die verklemmte
 Stelle die Definition der Reversibilität verletzt wäre.
-$R \Longrightarrow \neg V$
+
+<!--$R \Longrightarrow \neg V$-->
 
 
 
 <!--\newpage-->
 ## Verklemmung und Beschränktheit
+
 Es besteht kein Zusammenhang.
 
 <!--\fig{width=\textwidth}{Verklemmung-Beschraenkt}-->
 
 
 
-<!--\newpage-->
 ## Verklemmung und Stelleninvarianten
-Ist $M_0$ verklemmt, ist eine P-Invariante vorhanden, in der alle Stellen mit 1
+
+Ist <!--$M_0$--> verklemmt, ist eine P-Invariante vorhanden, in der alle Stellen mit 1
 gewichtet sind.
 
 
 
-<!--\newpage-->
 ## Verklemmung und Transitionsinvarianten
-echt positive T-Invariante $\Longrightarrow$ keine Verklemmung
+
+Echt positive T-Invariante <!--$\Longrightarrow$--> keine Verklemmung.
 
 
 
-<!--\newpage-->
 ## Verklemmung und Überdeckungsgraph
-$\neg$ Senken im ÜG $\Longrightarrow \neg$ Verklemmung
+
+<!--$\neg$--> Senken im ÜG <!--$\Longrightarrow \neg$--> Verklemmung.
 
 
 
-<!--\newpage-->
 ## Verklemmung und Kondensation des EG
-$|KG| = 1 \Longrightarrow \neg Verklemmung$
+
+<!--$|KG| = 1 \Longrightarrow \neg Verklemmung$-->
