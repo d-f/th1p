@@ -18,7 +18,7 @@
           </graphics>
         </attribute>
         <attribute name="Marking" id="224" net="1">
-          <![CDATA[1]]>
+          <![CDATA[0]]>
           <graphics count="1">
             <graphic x="20.00" y="40.00" id="225" net="1" show="1" grparent="229" state="1"/>
           </graphics>
@@ -922,46 +922,46 @@
     <metadataclass count="4" name="Comment">
       <metadata id="333" net="1">
         <attribute name="Comment" id="334" net="1">
-          <![CDATA[1 Knoten (KG) + S-Invariante]]>
+          <![CDATA[1 Knoten (KG) + verklemmt]]>
           <graphics count="1">
             <graphic xoff="3.00" x="103.00" y="100.00" id="335" net="1" show="1" grparent="336" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
-          <graphic x="100.00" y="100.00" id="336" net="1" show="1" w="211.00" h="24.00" state="1" pen="255,255,255"/>
+          <graphic x="100.00" y="100.00" id="336" net="1" show="1" w="190.00" h="24.00" state="1" pen="255,255,255"/>
         </graphics>
       </metadata>
       <metadata id="573" net="1">
         <attribute name="Comment" id="574" net="1">
-          <![CDATA[1 Knoten (KG) + keine S-Invariante]]>
+          <![CDATA[1 Knoten (KG) + nicht verklemmt]]>
           <graphics count="1">
             <graphic xoff="3.00" x="323.00" y="100.00" id="575" net="1" show="1" grparent="576" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
-          <graphic x="320.00" y="100.00" id="576" net="1" show="1" w="253.00" h="24.00" state="1" pen="255,255,255"/>
+          <graphic x="320.00" y="100.00" id="576" net="1" show="1" w="232.00" h="24.00" state="1" pen="255,255,255"/>
         </graphics>
       </metadata>
       <metadata id="635" net="1">
         <attribute name="Comment" id="636" net="1">
-          <![CDATA[2 Knoten (KG) + S-Invariante]]>
+          <![CDATA[2 Knoten (KG) + verklemmt]]>
           <graphics count="1">
             <graphic xoff="3.00" x="103.00" y="220.00" id="637" net="1" show="1" grparent="638" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
-          <graphic x="100.00" y="220.00" id="638" net="1" show="1" w="211.00" h="24.00" state="1" pen="255,255,255"/>
+          <graphic x="100.00" y="220.00" id="638" net="1" show="1" w="190.00" h="24.00" state="1" pen="255,255,255"/>
         </graphics>
       </metadata>
       <metadata id="772" net="1">
         <attribute name="Comment" id="773" net="1">
-          <![CDATA[viele Knoten (KG) + keine S-Invariante]]>
+          <![CDATA[viele Knoten (KG) + nicht verklemmt]]>
           <graphics count="1">
             <graphic xoff="3.00" x="323.00" y="220.00" id="774" net="1" show="1" grparent="775" state="1"/>
           </graphics>
         </attribute>
         <graphics count="1">
-          <graphic x="320.00" y="220.00" id="775" net="1" show="1" w="281.00" h="24.00" state="1" pen="255,255,255"/>
+          <graphic x="320.00" y="220.00" id="775" net="1" show="1" w="260.00" h="24.00" state="1" pen="255,255,255"/>
         </graphics>
       </metadata>
     </metadataclass>

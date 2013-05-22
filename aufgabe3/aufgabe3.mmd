@@ -167,10 +167,10 @@ Transitionen bilden T-Invariante
 
 ## Kondensation des EG und Lebendigkeit
 
-Ein Kondensationsgraph fasst alle stark zusammenhängenden Komponenten zusammen. Dafür müssen die
-Komponenten lebendig sein. Alle Teile einer Komponente des KG sind lebendig.
+Der Kondensationsgraph eines Erreichbarkeitsgraphen fasst alle stark zusammenhängenden Knoten des
+Erreichbarkeitsgraphen zu Komponenten zusammen. Die Komponenten selbst sind in sich lebendig.
 
-<!--$|KEG| = 1 \Longleftrightarrow Lebendigkeit$-->
+<!--$|KEG| = 1 \Longrightarrow Lebendig$-->
 
 
 
@@ -178,16 +178,18 @@ Komponenten lebendig sein. Alle Teile einer Komponente des KG sind lebendig.
 
 Besteht der KEG aus einer Komponente, ist das Netz reversibel.
 
-<!--$|KEG| = 1 \Longleftrightarrow Reversibilitaet$-->
+<!--$|KEG| = 1 \Longleftrightarrow Reversibel$-->
 
 
 
 <!--\newpage-->
 ## Kondensation des EG und Beschränktheit
 
-Es besteht kein Zusammenhang zwischen der Größe des Kondensationsgraphen und der Beschränktheit des Netzes.
+Für unbeschränkte Netze, in denen also immer mehr Token entstehen, hat der zugehörige Erreichbarkeitsgraph unendlich viele
+Knoten. Umgekehrt hat ein beschränktes Netz immer einen endlichen Erreichbarkeitsgraphen.
+Da sich unendliche Erreichbarkeitsgraphen nicht kondensieren lassen, gilt also folgende Beziehung:
 
-<!--\fig{width=\textwidth}{KEG-Beschraenkt}-->
+<!--$Unbeschraenkt \Longrightarrow |Knoten des EG| = +\infty \Longrightarrow |Knoten des KG| = +\infty$-->
 
 
 
@@ -203,12 +205,16 @@ Zusammenhang.
 <!--\newpage-->
 ## Kondensation des EG und Transitionsinvarianten
 
-<!--$\left| KEG \right| = 1 \Longrightarrow$--> echt positive T-Invariante
+Unabhängig
+
+<!--\fig{width=\textwidth}{KEG-T-Invariante}-->
 
 
 
 ## Kondensation des EG und Überdeckungsgraph
-Der KEG stellt die stark zusammenhängenden Knoten des Überdeckungsgraphen ab.
+Unabhängig
+
+<!--\fig{width=\textwidth}{KEG-UG}-->
 
 
 
@@ -239,14 +245,17 @@ Es besteht kein Zusammenhang.
 
 ## Verklemmung und Stelleninvarianten
 
-Ist <!--$M_0$--> verklemmt, ist eine P-Invariante vorhanden, in der alle Stellen mit 1
-gewichtet sind.
+Da sich Verklemmungen immer auf Markierungen stützen, S-Invarianten aber unabhängig von Markierungen sind, besteht hier kein Zusammenhang.
+
+<!--\fig{width=\textwidth}{Verklemmung-S-Invariante}-->
 
 
 
 ## Verklemmung und Transitionsinvarianten
 
-Echt positive T-Invariante <!--$\Longrightarrow$--> keine Verklemmung.
+Da sich Verklemmungen immer auf Markierungen stützen, T-Invarianten aber unabhängig von Markierungen sind, besteht hier kein Zusammenhang.
+
+<!--\fig{width=\textwidth}{Verklemmung-T-Invariante}-->
 
 
 
@@ -258,4 +267,6 @@ Senken im ÜG <!--$\Longrightarrow$--> Verklemmung.
 
 ## Verklemmung und Kondensation des EG
 
-<!--$|KEG| = 1 \Longrightarrow \neg Verklemmung$-->
+Unabhängig.
+
+<!--\fig{width=\textwidth}{Verklemmung-KEG}-->
