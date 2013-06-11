@@ -1,0 +1,112 @@
+Base Header Level:  3
+latex input:        document-info
+latex footer:       x3-assignment-end
+
+
+<!--
+
+%\sloppy
+
+\newcommand{\transition}[2]{\textrm{#1} $\rightarrow$ \textrm{#2}}
+
+\newcommand{\fig}[2]{%
+  \vspace{\parskip}%
+  \begin{center}%
+    \includegraphics[#1]{figures/#2}%
+  \end{center}%
+}
+
+\newcommand{\op}[1]{\operatorname{#1}}
+
+% Vorbereich und Nachbereich
+\newcommand{\vb}[1]{\bullet \, #1}
+\newcommand{\nb}[1]{#1 \, \bullet}
+
+% aktivierte Transition
+\newcommand{\ma}[2]{#1[#2\rangle}
+-->
+
+
+# Eisenbahn Aufgabe
+
+## Ein Zug kann die Acht fahren
+
+Eine Route die eine Acht im Lösungsnetz beschreibt, ist zum Beispiel folgende (die Zahlen stehen hier für die "GA" stellen mit der entsprechenden Nummer):
+
+<!--\[
+    6 \rightarrow 7 \rightarrow 8 \rightarrow 9 \rightarrow 4 \rightarrow 3 \rightarrow 2 \rightarrow 9 \rightarrow 6
+\]-->
+
+Dass diese Strecke von einem Zug befahren werden kann, lässt sich zum Beispiel durch folgenden CTL-Ausdruck evaluieren:
+
+
+<!--\begin{align*}
+(AG\ (GA6\ \&\ GAK7\ \&\ \op{SchrankenOffen})\ &\rightarrow\ EX\ GA7)\ \&\ \\
+(AG\ (GA7\ \&\ GAK8)\ &\rightarrow\ EX\ GA8)\ \&\ \\
+(AG\ (GA8\ \&\ GAK9\ \&\ \op{WeicheUnten1})\ &\rightarrow\ EX\ GA9)\ \&\ \\
+(AG\ (GA9\ \&\ GAK4\ \&\ \op{WeicheUnten4})\ &\rightarrow\ EX\ GA4)\ \&\ \\
+(AG\ (GA4\ \&\ GAK3)\ &\rightarrow\ EX\ GA3)\ \&\ \\
+(AG\ (GA3\ \&\ GAK2)\ &\rightarrow\ EX\ GA2)\ \&\ \\
+(AG\ (GA2\ \&\ GAK9\ \&\ \op{WeicheUnten2})\ &\rightarrow\ EX\ GA9)\ \&\ \\
+(AG\ (GA9\ \&\ GAK6\ \&\ \op{WeicheUnten3})\ &\rightarrow\ EX\ GA6);
+\end{align*}-->
+
+Es wird mit "GA6" begonnen, also mit jedem Zustand in dem gilt, dass sich ein Token auf "GA6" befindet, und ausserdem die Voraussetzungen erfüllt sind damit sich das Token zu GA7 bewegen kann, also "GAK7 & SchrankenOffen". Für diese Zustände wird geprüft, ob es einen Folgezustand gibt, sodass "GA7" gilt, d.h. "EX GA7". Dieses vorgehen wird für alle Stellen auf der oben beschriebenen Route wiederholt, sodass sichergegangen werden kann, dass ein Zug diese Route fahren kann.
+
+
+
+<!--\newpage-->
+## Es gilt immer, dass genau dann wenn die Schranke unten ist, kann ein Zug durchfahren
+
+<!--\begin{align}
+&AG((GA6\ \&\ GAK7\ \&\ \op{SchrankenOffen}==0)\ \rightarrow\ EX(GA7))\ \&\\
+&AG((GA7\ \&\ GAK6\ \&\ \op{SchrankenOffen}==0)\ \rightarrow\ EX(GA6));
+\end{align}-->
+
+In dieser CTL-Formel werden beide Wege durch die Schranke modelliert, d.h. die Richtung von "GA6" nach "GA7" (1) sowie die Richtung von "GA7" nach "GA6" (2). Es wird jeweils geprüft ob die Voraussetzungen erfüllt sind, dass bspw. der Zug auf "GA6" nach "GA7" fahren kann, und außerdem ob die Schranke nicht offen ist. In jenen Zuständen muss es dann einen Folgezustand geben, für den der Zug durch die geschlossene Schranke gefahren ist. Natürlich evaluiert dieser Ausdruck zu "false".
+
+
+
+
+
+## Die Schranken sind nie dauerhaft geschlossen
+
+<!--\[
+    AF\ \op{SchrankenOffen}==1;
+\]-->
+
+## Das Netz ist 1-sicher
+
+Die folgende CTL-Formel prüft 1-sicherheit für alle Stellen deren Token einen Gleisabschnitt repräsentieren. Wollte man 1-sicherheit für das gesamte Netz prüfen, so müsste man die Formel um die fehlenden Stellen erweitern.
+
+<!--\begin{align*}
+AG\ (GA1<=1)\ &\&\\
+AG\ (GA2<=1)\ &\&\\
+AG\ (GA3<=1)\ &\&\\
+AG\ (GA4<=1)\ &\&\\
+AG\ (GA5<=1)\ &\&\\
+AG\ (GA6<=1)\ &\&\\
+AG\ (GA7<=1)\ &\&\\
+AG\ (GA8<=1)\ &\&\\
+AG\ (GA9<=1);
+\end{align*}-->
+
+
+
+## Eine selbst formulierte, nicht-triviale Eigenschaft
+
+Hier wird eine CTL-Formel aufgestellt, welche folgendes Sicherstellt:
+
+> Wenn alle schranken oben sind, ist es nicht möglich zu GA9 (mittlerer Gleisabschnitt) zu gelangen.
+
+Zu diesem Zweck werden alle Zustände gesucht, in denen es Potenziell möglich wäre auf GA9 zu fahren ("GAK9 & GA9==0"), aber alle Weichen so gestellt sind dass sie nicht zu GA9 hinführen. Für diese Zustände muss dann gelten, dass auf keinem der Folgezustände GA9 belegt is, also "AX GA9==0".
+
+<!--\begin{align*}
+AG((&GAK9\\
+\&\ &GA9==0\\
+\&\ &WeicheOben1\\
+\&\ &WeicheOben2\\
+\&\ &WeicheOben3\\
+\&\ &WeicheOben4)\ \rightarrow\ AX\ GA9==0);
+\end{align*}-->
+
