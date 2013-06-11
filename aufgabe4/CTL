@@ -11,3 +11,22 @@ AG  (GA6==1 | GA6 == 0) &
 AG  (GA7==1 | GA7 == 0) &
 AG  (GA8==1 | GA8 == 0) &
 AG  (GA9==1 | GA9 == 0);
+
+
+
+/*
+ * Die Schranken sind nie dauerhaft geschlossen.
+ */
+
+AF SchrankenOffen==1;
+
+
+/*
+ * Es gilt immer, dass genau dann wenn die Schranke unten ist, kann ein Zug durchfahren
+ */
+
+AG((GA6==1 & GAK7==1 & SchrankenOffen==0) -> EX(GA7==1)) &
+    AG((GA7==1 & GAK6==1 & SchrankenOffen==0) -> EX(GA6==1));
+
+
+
