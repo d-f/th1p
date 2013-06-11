@@ -1,0 +1,13 @@
+/*
+ * Das Netz ist 1-sicher
+ */
+
+AG  (GA1==1 | GA1 == 0) &
+AG  (GA2==1 | GA2 == 0) &
+AG  (GA3==1 | GA3 == 0) &
+AG  (GA4==1 | GA4 == 0) &
+AG  (GA5==1 | GA5 == 0) &
+AG  (GA6==1 | GA6 == 0) &
+AG  (GA7==1 | GA7 == 0) &
+AG  (GA8==1 | GA8 == 0) &
+AG  (GA9==1 | GA9 == 0);
