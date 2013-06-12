@@ -34,7 +34,7 @@ Für diesen Teil ist lediglich zu prüfen, ob sich auf der Stelle "Warteschlange
 jedem möglichen Pfad maximal 3 Token befinden:
 
 <!--\begin{align*}
-AG Warteschlange_Kasse <= 3;
+AG\ Warteschlange\_Kasse\ <=\ 3;
 \end{align*}-->
 
 ## Alle 5 Kunden stehen immer wieder zusammen vor der Kantine
@@ -43,21 +43,21 @@ Hierfür ist zu prüfen, ob auf allen möglichen Pfaden irgendwann ein Zustand e
 in dem auf der Stelle "EinGang" 5 Token liegen:
 
 <!--\begin{align*}
-AF EinGang == 5;
+AF\ EinGang\ ==\ 5;
 \end{align*}-->
 
 ## Das Netz ist lebendig
 
 <!--\begin{align*}
-AG AF (
-	EinGang > 0 |
-	(WarteSchlange1 > 0 & WarteschlangeKapazitaet1 > 0) |
-	(WarteSchlange2 > 0 & WarteschlangeKapazitaet2 > 0) |
-	(Ausgabe1 > 0 & AusgabeKapazitaet1 > 0) |
-	(Ausgabe2 > 0 & AusgabeKapazitaet2 > 0) |
-	(Warteschlange_Kasse > 0 & KapazitaetKasse > 0) |
-	SpeiseSaal > 0 |
-	NeueKunden == 5
+AG\ AF\ (
+&EinGang\ >\ 0\ |\\
+&(WarteSchlange1\ >\ 0\ \&\ WarteschlangeKapazitaet1\ >\ 0)\ |\\
+&(WarteSchlange2\ >\ 0\ \&\ WarteschlangeKapazitaet2\ >\ 0)\ |\\
+&(Ausgabe1\ >\ 0\ \&\ AusgabeKapazitaet1\ >\ 0)\ |\\
+&(Ausgabe2\ >\ 0\ \&\ AusgabeKapazitaet2\ >\ 0)\ |\\
+&(Warteschlange_Kasse\ >\ 0\ \&\ KapazitaetKasse\ >\ 0)\ |\\
+&SpeiseSaal\ >\ 0\ |\\
+&NeueKunden\ ==\ 5
 );
 \end{align*}-->
 
@@ -67,18 +67,26 @@ Um zu prüfen, ob ein Netz reversibel ist, muss es möglich sein, einen Pfad zu 
 der dem Startzustand entspricht.
 
 <!--\begin{align*}
-AF (
-	EinGang == 5 &
-	WarteschlangeKapazitaet1 == 2 & WarteschlangeKapazitaet2 == 2 &
-	WarteSchlange1 == 0 & WarteSchlange2 == 0 &
-	AusgabeKapazitaet1 == 1 & AusgabeKapazitaet2 == 1 &
-	Ausgabe1 == 1 & Ausgabe2 == 0 &
-	KapazitaetKasse == 3 & Warteschlange_Kasse == 0 &
-	SpeiseSaal == 0 &
-	NeueKunden == 0
-);
+AF(&\\
+EinGang\ ==\ 5\ \&&\\
+WarteschlangeKapazitaet1\ ==\ 2\ \&&\\
+WarteschlangeKapazitaet2\ ==\ 2\ \&&\\
+WarteSchlange1\ ==\ 0\ \&&\\
+WarteSchlange2\ ==\ 0\ \&&\\
+AusgabeKapazitaet1\ ==\ 1\ \&&\\
+AusgabeKapazitaet2\ ==\ 1\ \&&\\
+Ausgabe1\ ==\ 1\ \&&\\
+Ausgabe2\ ==\ 0\ \&&\\
+KapazitaetKasse\ ==\ 3\ \&&\\
+Warteschlange_Kasse\ ==\ 0\ \&&\\
+SpeiseSaal\ ==\ 0\ \&&\\
+NeueKunden\ ==\ 0&\\
+);&
 \end{align*}-->
 
+
+
+<!--\newpage-->
 # Eisenbahn Aufgabe
 
 ## Ein Zug kann die Acht fahren
