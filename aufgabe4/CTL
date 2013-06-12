@@ -3,14 +3,14 @@
  * 6 -> 7 -> 8 -> 9 -> 4 -> 3 -> 2 -> 9 -> 6
  */
 
-(AG (GA6 & GAK7 & SchrankenOffen) -> EX GA7) &
-  (AG (GA7 & GAK8) -> EX GA8) &
-  (AG (GA8 & GAK9 & WeicheUnten1) -> EX GA9) &
-  (AG (GA9 & GAK4 & WeicheUnten4) -> EX GA4) &
-  (AG (GA4 & GAK3) -> EX GA3) &
-  (AG (GA3 & GAK2) -> EX GA2) &
-  (AG (GA2 & GAK9 & WeicheUnten2) -> EX GA9) &
-  (AG (GA9 & GAK6 & WeicheUnten3) -> EX GA6);
+(AG (GA6 & GAK7 & SchrankenOffen -> EX GA7)) &
+(AG (GA7 & GAK8 -> EX GA8)) &
+(AG (GA8 & GAK9 & WeicheUnten1 -> EX GA9)) &
+(AG (GA9 & GAK4 & WeicheUnten4 -> EX GA4)) &
+(AG (GA4 & GAK3 -> EX GA3)) &
+(AG (GA3 & GAK2 -> EX GA2)) &
+(AG (GA2 & GAK9 & WeicheUnten2 -> EX GA9)) &
+(AG (GA9 & GAK6 & WeicheUnten3 -> EX GA6));
 
 
 
@@ -42,8 +42,8 @@ AF SchrankenOffen==1;
  * Es gilt immer, dass genau dann wenn die Schranke unten ist, kann ein Zug durchfahren
  */
 
-AG((GA6==1 & GAK7==1 & SchrankenOffen==0) -> EX(GA7==1)) &
-    AG((GA7==1 & GAK6==1 & SchrankenOffen==0) -> EX(GA6==1));
+AG((GA6==1 & GAK7==1 & SchrankenOffen==1) -> EX(GA7==1)) &
+    AG((GA7==1 & GAK6==1 & SchrankenOffen==1) -> EX(GA6==1));
 
 
 /*
