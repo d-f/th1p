@@ -43,28 +43,34 @@ Hierfür ist zu prüfen, ob auf allen möglichen Pfaden irgendwann ein Zustand e
 in dem auf der Stelle "EinGang" 5 Token liegen:
 
 <!--\begin{align*}
-AF\ EinGang\ ==\ 5;
+AG\ AF\ EinGang\ ==\ 5;
 \end{align*}-->
 
 ## Das Netz ist lebendig
 
+Hier ist zu prüfen, ob jede Transition beliebig oft schalten kann. Da man mit Hilfe von Charlie
+keine Transitionen direkt überprüfen kann, müssen stattdessen deren Vorbereiche überprüft werden.
+Dafür wird für jede Transition geprüft, ob in dessen Vorbereich genug Token liegen, um die jeweilige
+Transition zu schalten.
+
 <!--\begin{align*}
-AG\ AF\ (
-&EinGang\ >\ 0\ |\\
-&(WarteSchlange1\ >\ 0\ \&\ WarteschlangeKapazitaet1\ >\ 0)\ |\\
-&(WarteSchlange2\ >\ 0\ \&\ WarteschlangeKapazitaet2\ >\ 0)\ |\\
-&(Ausgabe1\ >\ 0\ \&\ AusgabeKapazitaet1\ >\ 0)\ |\\
-&(Ausgabe2\ >\ 0\ \&\ AusgabeKapazitaet2\ >\ 0)\ |\\
-&(Warteschlange_Kasse\ >\ 0\ \&\ KapazitaetKasse\ >\ 0)\ |\\
-&SpeiseSaal\ >\ 0\ |\\
-&NeueKunden\ ==\ 5
+AG\ (
+&EF(EinGang\ >\ 0\ \&\ WarteschlangeKapazitaet2\ >\ 0)\ \&\\
+&EF(EinGang\ >\ 0\ \&\ WarteschlangeKapazitaet1\ >\ 0)\ \&\\
+&EF(WarteSchlange2\ >\ 0\ \&\ Bedienstete\ >\ 0\ \&\ AusgabeKapazitaet2)\ \&\\
+&EF(WarteSchlange1\ >\ 0\ \&\ Bedienstete\ >\ 0\ \&\ AusgabeKapazitaet1)\ \&\\
+&EF(Ausgabe2\ >\ 0\ \&\ KapazitaetKasse\ >\ 0)\ \&\\
+&EF(Ausgabe1\ >\ 0\ \&\ KapazitaetKasse\ >\ 0)\ \&\\
+&EF(Warteschlange\_Kasse\ >\ 0)\ \&\\
+&EF(SpeiseSaal\ >\ 0)\ \&\\
+&EF(NeueKunden\ ==\ 5)\\
 );
 \end{align*}-->
 
 ## Das Netz ist reversibel (Eine selbst formulierte, nicht-triviale Eigenschaft)
 
-Um zu prüfen, ob ein Netz reversibel ist, muss es möglich sein, einen Pfad zu finden auf dem ein Zustand liegt,
-der dem Startzustand entspricht.
+Um zu prüfen, ob ein Netz reversibel ist, muss es möglich sein, einen Pfad zu finden auf dem eine Markierung liegt,
+die der Startmarkierung entspricht.
 
 <!--\begin{align*}
 AG\ EF(&\\
@@ -75,8 +81,9 @@ WarteSchlange1\ ==\ 0\ \&&\\
 WarteSchlange2\ ==\ 0\ \&&\\
 AusgabeKapazitaet1\ ==\ 1\ \&&\\
 AusgabeKapazitaet2\ ==\ 1\ \&&\\
-Ausgabe1\ ==\ 1\ \&&\\
+Ausgabe1\ ==\ 0\ \&&\\
 Ausgabe2\ ==\ 0\ \&&\\
+Bedienstete\ ==\ 1\ \&&\\
 KapazitaetKasse\ ==\ 3\ \&&\\
 Warteschlange\_Kasse\ ==\ 0\ \&&\\
 SpeiseSaal\ ==\ 0\ \&&\\
