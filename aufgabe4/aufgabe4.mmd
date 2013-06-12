@@ -34,7 +34,7 @@ Für diesen Teil ist lediglich zu prüfen, ob sich auf der Stelle "Warteschlange
 jedem möglichen Pfad maximal 3 Token befinden:
 
 <!--\begin{align*}
-AG\ Warteschlange\_Kasse\ <=\ 3;
+AG\ AF\ Warteschlange\_Kasse\ <=\ 3;
 \end{align*}-->
 
 ## Alle 5 Kunden stehen immer wieder zusammen vor der Kantine
@@ -67,7 +67,7 @@ Um zu prüfen, ob ein Netz reversibel ist, muss es möglich sein, einen Pfad zu 
 der dem Startzustand entspricht.
 
 <!--\begin{align*}
-AF(&\\
+AG\ EF(&\\
 EinGang\ ==\ 5\ \&&\\
 WarteschlangeKapazitaet1\ ==\ 2\ \&&\\
 WarteschlangeKapazitaet2\ ==\ 2\ \&&\\
@@ -78,7 +78,7 @@ AusgabeKapazitaet2\ ==\ 1\ \&&\\
 Ausgabe1\ ==\ 1\ \&&\\
 Ausgabe2\ ==\ 0\ \&&\\
 KapazitaetKasse\ ==\ 3\ \&&\\
-Warteschlange_Kasse\ ==\ 0\ \&&\\
+Warteschlange\_Kasse\ ==\ 0\ \&&\\
 SpeiseSaal\ ==\ 0\ \&&\\
 NeueKunden\ ==\ 0&\\
 );&
@@ -132,7 +132,7 @@ In dieser CTL-Formel werden beide Wege durch die Schranke modelliert, d.h. die R
 ## Die Schranken sind nie dauerhaft geschlossen
 
 <!--\[
-    AF\ \op{SchrankenOffen}==1;
+    AG\ EX\ \op{SchrankenOffen}==1;
 \]-->
 
 ## Das Netz ist 1-sicher
