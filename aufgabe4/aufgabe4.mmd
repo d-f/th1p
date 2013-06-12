@@ -119,11 +119,13 @@ Es wird mit "GA6" begonnen, also mit jedem Zustand in dem gilt, dass sich ein To
 ## Es gilt immer, dass genau dann wenn die Schranke unten ist, kann ein Zug durchfahren
 
 <!--\begin{align}
-&AG((GA6\ \&\ GAK7\ \&\ \op{SchrankenOffen}==0)\ \rightarrow\ EX(GA7))\ \&\\
-&AG((GA7\ \&\ GAK6\ \&\ \op{SchrankenOffen}==0)\ \rightarrow\ EX(GA6));
+&AG((GA6\ \&\ GAK7\ \&\ \op{SchrankenOffen})\ \rightarrow\ EX(GA7))\ \&\\
+&AG((GA7\ \&\ GAK6\ \&\ \op{SchrankenOffen})\ \rightarrow\ EX(GA6));
 \end{align}-->
 
-In dieser CTL-Formel werden beide Wege durch die Schranke modelliert, d.h. die Richtung von "GA6" nach "GA7" (1) sowie die Richtung von "GA7" nach "GA6" (2). Es wird jeweils geprüft ob die Voraussetzungen erfüllt sind, dass bspw. der Zug auf "GA6" nach "GA7" fahren kann, und außerdem ob die Schranke nicht offen ist. In jenen Zuständen muss es dann einen Folgezustand geben, für den der Zug durch die geschlossene Schranke gefahren ist. Natürlich evaluiert dieser Ausdruck zu "false".
+In dieser CTL-Formel werden beide Wege durch die Schranke modelliert, d.h. die Richtung von "GA6" nach "GA7" (1) sowie die Richtung von "GA7" nach "GA6" (2). Es wird jeweils geprüft ob die Voraussetzungen erfüllt sind, dass bspw. der Zug auf "GA6" nach "GA7" fahren kann, und außerdem ob die Schranke offen ist. In jenen Zuständen muss es dann einen Folgezustand geben, für den der Zug durch die offene Schranke gefahren ist.
+
+Man beachte hier, dass die Modellierung unsinnig ist, da wir Schranken für Züge modelliert haben (man stelle sich eine Schrank vor, die die Gleise blockiert). In der Realität ist die Schranke natürlich für die Autos gedacht, sodass der Zug eigentlich nur dann fahren darf, wenn die Schranken geschlossen sind.
 
 
 
